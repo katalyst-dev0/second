@@ -1,0 +1,60 @@
+$ vite
+Port 5173 is in use, trying another one...
+
+  VITE v5.4.21  ready in 465 ms
+
+  ➜  Local:   http://localhost:5174/
+  ➜  Network: use --host to expose
+2:40:34 PM [vite] Pre-transform error: /home/yugaaank/Desktop/katalyst-2/src/App.tsx: Missing semicolon. (152:5)
+
+  150 |
+  151 | export default App;
+> 152 | fault App;
+      |      ^
+  153 |
+2:40:34 PM [vite] Internal server error: /home/yugaaank/Desktop/katalyst-2/src/App.tsx: Missing semicolon. (152:5)
+
+  150 |
+  151 | export default App;
+> 152 | fault App;
+      |      ^
+  153 |
+  Plugin: vite:react-babel
+  File: /home/yugaaank/Desktop/katalyst-2/src/App.tsx:152:5
+  150|  
+  151|  export default App;
+  152|  fault App;
+     |       ^
+  153|  
+      at constructor (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/parser/lib/index.js:365:19)
+      at TypeScriptParserMixin.raise (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/parser/lib/index.js:6599:19)
+      at TypeScriptParserMixin.semicolon (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/parser/lib/index.js:6895:10)
+      at TypeScriptParserMixin.parseExpressionStatement (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/parser/lib/index.js:13285:10)
+      at TypeScriptParserMixin.parseStatementContent (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/parser/lib/index.js:12899:19)
+      at TypeScriptParserMixin.parseStatementContent (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/parser/lib/index.js:9508:18)
+      at TypeScriptParserMixin.parseStatementLike (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/parser/lib/index.js:12767:17)
+      at TypeScriptParserMixin.parseModuleItem (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/parser/lib/index.js:12744:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/parser/lib/index.js:13316:36)
+      at TypeScriptParserMixin.parseBlockBody (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/parser/lib/index.js:13309:10)
+      at TypeScriptParserMixin.parseProgram (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/parser/lib/index.js:12622:10)
+      at TypeScriptParserMixin.parseTopLevel (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/parser/lib/index.js:12612:25)
+      at TypeScriptParserMixin.parse (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/parser/lib/index.js:14488:25)
+      at TypeScriptParserMixin.parse (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/parser/lib/index.js:10126:18)
+      at parse (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/parser/lib/index.js:14522:38)
+      at parser (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/core/lib/parser/index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/core/lib/transformation/index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (/home/yugaaank/Desktop/katalyst-2/node_modules/@babel/core/lib/transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (/home/yugaaank/Desktop/katalyst-2/node_modules/gensync/index.js:261:32)
+      at /home/yugaaank/Desktop/katalyst-2/node_modules/gensync/index.js:273:13
+      at async.call.result.err.err (/home/yugaaank/Desktop/katalyst-2/node_modules/gensync/index.js:223:11)
+      at /home/yugaaank/Desktop/katalyst-2/node_modules/gensync/index.js:189:28
+      at /home/yugaaank/Desktop/katalyst-2/node_modules/@babel/core/lib/gensync-utils/async.js:67:7
+      at /home/yugaaank/Desktop/katalyst-2/node_modules/gensync/index.js:113:33
+      at step (/home/yugaaank/Desktop/katalyst-2/node_modules/gensync/index.js:287:14)
+      at /home/yugaaank/Desktop/katalyst-2/node_modules/gensync/index.js:273:13
+      at async.call.result.err.err (/home/yugaaank/Desktop/katalyst-2/node_modules/gensync/index.js:223:11)
