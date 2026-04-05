@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Star, ChevronDown } from "lucide-react";
 import type LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
@@ -22,6 +22,7 @@ const scrollOptions = {
 const App = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const locoScrollRef = useRef<LocomotiveScroll | null>(null);
+  const [heroVisible, setHeroVisible] = useState(false);
 
   useEffect(() => {
     const el = scrollContainerRef.current;
@@ -46,6 +47,11 @@ const App = () => {
       locoScrollRef.current?.destroy();
       locoScrollRef.current = null;
     };
+  }, []);
+
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => setHeroVisible(true));
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   return (
@@ -93,7 +99,11 @@ const App = () => {
       </nav>
 
       {/* Hero Section */}
-      <header className="px-6 pt-24 pb-32 max-w-7xl mx-auto text-center relative overflow-hidden">
+      <header
+        className={`px-6 pt-24 pb-32 max-w-7xl mx-auto text-center relative overflow-hidden ${
+          heroVisible ? "animate-fade-in-up" : "opacity-0"
+        }`}
+      >
         {/* Reviews Badge */}
       <div className="inline-flex items-center gap-2 mb-8">
           <div className="w-6 h-6 border border-white/20 rounded flex items-center justify-center">
