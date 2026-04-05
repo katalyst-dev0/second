@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Star, ChevronDown } from "lucide-react";
+import { Star } from "lucide-react";
 import type LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 
@@ -9,6 +9,7 @@ import Testimonial1 from "@/components/ui/testimonial-1";
 import { TestimonialsScrolling } from "@/components/testimonials-scrolling";
 import { GradientBackground } from "@/components/ui/paper-design-shader-background";
 import { WebGLShader } from "@/components/ui/web-gl-shader";
+import { KatalystLogo } from "@/components/ui/katalyst-logo";
 
 const scrollOptions = {
   smooth: true,
@@ -63,40 +64,27 @@ const App = () => {
         className="min-h-screen bg-transparent font-sans text-white relative z-10"
       >
         {/* Navigation */}
-      <nav className="px-6 py-4 flex items-center justify-between max-w-7xl mx-auto">
-        <div className="flex items-center gap-2">
-          <div className="w-5 h-5 bg-white/10 border border-white/10 rounded flex items-center justify-center">
-            <Star className="w-3 h-3 text-white fill-white" />
+        <nav className="px-6 py-4 flex items-center justify-between max-w-7xl mx-auto">
+          <div className="flex items-center gap-3 flex-shrink-0">
+            <KatalystLogo width={180} height={48} />
           </div>
-          <span className="text-lg font-semibold tracking-tight text-white">
-            Stellar.ai
-          </span>
-        </div>
-
-        <div className="hidden md:flex items-center gap-8">
-          <button className="text-sm text-gray-300 hover:text-white flex items-center gap-1 transition-colors">
-            Solutions <ChevronDown className="w-3.5 h-3.5" />
-          </button>
-          <button className="text-sm text-gray-300 hover:text-white flex items-center gap-1 transition-colors">
-            For Teams <ChevronDown className="w-3.5 h-3.5" />
-          </button>
-          <button className="text-sm text-gray-300 hover:text-white transition-colors">
-            About Us
-          </button>
-          <button className="text-sm text-gray-300 hover:text-white transition-colors">
-            Learn Hub
-          </button>
-        </div>
-
-        <div className="flex items-center gap-6">
-          <button className="text-sm text-gray-300 hover:text-white transition-colors">
-            Login
-          </button>
-          <button className="bg-white/10 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-white/20 transition-colors shadow-sm border border-white/10">
-            Get started free
-          </button>
-        </div>
-      </nav>
+          <div className="hidden md:flex items-center gap-8">
+            <button className="text-sm text-gray-300 hover:text-white transition-colors">Services</button>
+            <button className="text-sm text-gray-300 hover:text-white transition-colors">Case Studies</button>
+            <button className="text-sm text-gray-300 hover:text-white transition-colors">Insights</button>
+          </div>
+          <div className="flex items-center gap-6">
+            <button className="text-sm text-gray-300 hover:text-white transition-colors">Log in</button>
+            <a
+              href="https://calendly.com/kompanykatalyst/discovery-call"
+              target="_blank"
+              rel="noreferrer"
+              className="bg-white/10 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-white/20 transition-colors shadow-sm border border-white/10"
+            >
+              Let's Talk
+            </a>
+          </div>
+        </nav>
 
       {/* Hero Section */}
       <header
@@ -118,10 +106,10 @@ const App = () => {
         <h1
           className="text-6xl md:text-7xl lg:text-[80px] font-normal leading-[1.1] tracking-tight mb-5"
         >
-          Work Smarter. Move Faster.
+          Katalyst Growth
           <br />
           <span className="bg-gradient-to-r from-white via-gray-400 to-gray-500 bg-clip-text text-transparent">
-            AI Powers You Up.
+            Digital performance that scales
           </span>
         </h1>
 
@@ -129,17 +117,21 @@ const App = () => {
         <p
         className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed"
         >
-          Intelligent automation syncs with the tools you love to streamline
-          tasks, boost output, and save time.
+          Integrated marketing, creative, and analytics systems keep your campaigns accountable and always in motion.
         </p>
 
         {/* CTA */}
         <div
         className="mb-12"
         >
-          <button className="bg-white/10 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-white/20 transition-colors shadow-lg shadow-white/5 border border-white/10">
-            Begin Free Trial
-          </button>
+          <a
+            href="https://calendly.com/kompanykatalyst/discovery-call"
+            target="_blank"
+            rel="noreferrer"
+            className="bg-white/10 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-white/20 transition-colors shadow-lg shadow-white/5 border border-white/10 inline-flex items-center justify-center"
+          >
+            Schedule a growth consult
+          </a>
         </div>
 
         {/* Video Section */}
