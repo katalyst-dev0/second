@@ -12,13 +12,15 @@ import { WebGLShader } from "@/components/ui/web-gl-shader";
 import { KatalystLogo } from "@/components/ui/katalyst-logo";
 import { Footer } from "@/components/ui/footer-section";
 
+const DESKTOP_BREAKPOINT = 1024;
+
 const scrollOptions = {
   smooth: true,
   lerp: 0.15,
   multiplier: 1.4,
   class: "is-revealed",
-  smartphone: { smooth: true, breakpoint: 768 },
-  tablet: { smooth: true, breakpoint: 1024 },
+  smartphone: { smooth: false },
+  tablet: { smooth: false },
 };
 
 const App = () => {
@@ -26,8 +28,26 @@ const App = () => {
   const locoScrollRef = useRef<LocomotiveScroll | null>(null);
   const [heroVisible, setHeroVisible] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [useLoco, setUseLoco] = useState(false);
 
   useEffect(() => {
+    const checkDesktop = () => {
+      setUseLoco(window.innerWidth >= DESKTOP_BREAKPOINT);
+    };
+    checkDesktop();
+    window.addEventListener("resize", checkDesktop);
+    return () => window.removeEventListener("resize", checkDesktop);
+  }, []);
+
+  useEffect(() => {
+    if (!useLoco) {
+      if (locoScrollRef.current) {
+        locoScrollRef.current.destroy();
+        locoScrollRef.current = null;
+      }
+      return;
+    }
+
     const el = scrollContainerRef.current;
     if (!el) return;
 
@@ -35,7 +55,7 @@ const App = () => {
 
     const init = async () => {
       const LocomotiveModule = await import("locomotive-scroll");
-      if (!isMounted) return;
+      if (!isMounted || !useLoco) return;
 
       locoScrollRef.current = new LocomotiveModule.default({
         el,
@@ -50,7 +70,7 @@ const App = () => {
       locoScrollRef.current?.destroy();
       locoScrollRef.current = null;
     };
-  }, []);
+  }, [useLoco]);
 
   useEffect(() => {
     const frame = requestAnimationFrame(() => setHeroVisible(true));
@@ -117,10 +137,10 @@ const App = () => {
 
       <div
         ref={scrollContainerRef}
-        data-scroll-container
+        {...(useLoco ? { "data-scroll-container": true } : {})}
         className="min-h-screen bg-transparent font-sans text-white relative z-10"
       >
-        <section data-scroll-section>
+        <section {...(useLoco ? { "data-scroll-section": true } : {})}>
           {/* Navigation */}
           <nav className="px-6 py-4 flex items-center justify-between max-w-7xl mx-auto relative z-50">
             <div className="flex items-center gap-3 flex-shrink-0">
@@ -305,19 +325,19 @@ const App = () => {
             </div>
           </header>
         </section>
-      <section data-scroll-section>
+      <section {...(useLoco ? { "data-scroll-section": true } : {})}>
         <AboutUsSection />
       </section>
-      <section data-scroll-section>
+      <section {...(useLoco ? { "data-scroll-section": true } : {})}>
         <WorldMapDemo />
       </section>
-      <section data-scroll-section>
+      <section {...(useLoco ? { "data-scroll-section": true } : {})}>
         <Testimonial1 />
       </section>
-      <section data-scroll-section>
+      <section {...(useLoco ? { "data-scroll-section": true } : {})}>
         <TestimonialsScrolling />
       </section>
-      <section data-scroll-section>
+      <section {...(useLoco ? { "data-scroll-section": true } : {})}>
         <Footer />
       </section>
       </div>
