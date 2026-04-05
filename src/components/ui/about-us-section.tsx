@@ -120,7 +120,7 @@ export default function AboutUsSection() {
 
   return (
     <section
-      id="about-section"
+      id="process"
       ref={sectionRef}
       className="w-full py-24 px-4 bg-transparent text-white overflow-hidden relative"
     >

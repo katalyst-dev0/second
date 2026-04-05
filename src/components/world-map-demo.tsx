@@ -10,6 +10,7 @@ export default function WorldMapDemo() {
 
   return (
     <div 
+      id="reach"
       ref={containerRef}
       className="py-32 bg-transparent w-full overflow-hidden"
     >

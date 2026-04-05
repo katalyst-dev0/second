@@ -71,6 +71,7 @@ export function TestimonialsScrolling() {
 
   return (
     <section 
+      id="feedback"
       ref={containerRef}
       className="bg-transparent py-32 overflow-hidden relative"
     >

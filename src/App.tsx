@@ -66,22 +66,27 @@ const App = () => {
         {/* Navigation */}
         <nav className="px-6 py-4 flex items-center justify-between max-w-7xl mx-auto">
           <div className="flex items-center gap-3 flex-shrink-0">
-            <KatalystLogo width={180} height={48} />
+            <button 
+              onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
+              className="cursor-pointer bg-transparent border-none p-0"
+            >
+              <KatalystLogo width={180} height={48} />
+            </button>
           </div>
           <div className="hidden md:flex items-center gap-8">
-            <button className="text-sm text-gray-300 hover:text-white transition-colors">Services</button>
-            <button className="text-sm text-gray-300 hover:text-white transition-colors">Case Studies</button>
-            <button className="text-sm text-gray-300 hover:text-white transition-colors">Insights</button>
+            <a href="#process" className="text-sm text-gray-300 hover:text-white transition-colors">Our Process</a>
+            <a href="#reach" className="text-sm text-gray-300 hover:text-white transition-colors">Global Reach</a>
+            <a href="#community" className="text-sm text-gray-300 hover:text-white transition-colors">Community</a>
+            <a href="#feedback" className="text-sm text-gray-300 hover:text-white transition-colors">Feedback</a>
           </div>
           <div className="flex items-center gap-6">
-            <button className="text-sm text-gray-300 hover:text-white transition-colors">Log in</button>
             <a
               href="https://calendly.com/kompanykatalyst/discovery-call"
               target="_blank"
               rel="noreferrer"
               className="bg-white/10 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-white/20 transition-colors shadow-sm border border-white/10"
             >
-              Let's Talk
+              Book an Appointment
             </a>
           </div>
         </nav>
@@ -139,14 +144,14 @@ const App = () => {
           <WebGLShader />
         </div>
 
-        {/* Company Logos */}
+        {/* Digital Marketing Services Cloud */}
         <div className="mt-24 pb-12 flex justify-center">
           <div className="logo-cloud glass-card flex flex-wrap items-center justify-center gap-x-12 gap-y-8 opacity-90">
             <span className="text-xl font-bold tracking-tighter text-white">
-              INTERSCOPE
+              META ADS
             </span>
             <span className="text-xl font-bold flex items-center gap-1 text-white">
-              <div className="w-5 h-5 bg-white rounded-full" /> SPOTIFY
+              <div className="w-5 h-5 bg-white rounded-full" /> GOOGLE ADS
             </span>
             <span className="text-lg font-medium flex items-center gap-2 text-white">
               <div className="grid grid-cols-2 gap-0.5">
@@ -154,16 +159,16 @@ const App = () => {
                   <div key={i} className="w-1 h-1 bg-white rounded-full" />
                 ))}
               </div>
-              Nexera
+              SEO STRATEGY
             </span>
             <span className="text-2xl font-serif italic font-bold text-white">
-              M3
+              EMAIL
             </span>
             <span className="text-lg font-bold flex items-center gap-2 text-white">
               <div className="w-7 h-7 border-2 border-white rounded-full flex items-center justify-center text-[10px]">
-                LC
+                AN
               </div>
-              LAURA COLE
+              ANALYTICS
             </span>
             <span className="text-lg font-semibold flex items-center gap-1.5 text-white">
               <div className="flex gap-0.5">
@@ -171,7 +176,7 @@ const App = () => {
                   <div key={i} className="w-1 h-1 bg-white rounded-full" />
                 ))}
               </div>
-              vertex
+              CONTENT
             </span>
           </div>
         </div>

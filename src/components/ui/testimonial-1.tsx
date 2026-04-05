@@ -23,33 +23,34 @@ export default function Testimonial1() {
 
   const stats: StatItem[] = [
     {
-      percentage: "80%",
-      label: "Ad Efficiency Increase",
+      percentage: "4.2x",
+      label: "ROAS on Meta Ads",
       isIncrease: true,
-      logo: "https://pro-section.ui-layouts.com/customer/netflix.png",
+      logo: "META",
     },
     {
-      percentage: "30%",
-      label: "Lower Cost Per Lead",
+      percentage: "38%",
+      label: "CPA Reduction (Google)",
       isIncrease: false,
-      logo: "https://pro-section.ui-layouts.com/customer/vercel.png",
+      logo: "GOOGLE",
     },
     {
-      percentage: "25%",
-      label: "Higher Conversion Rate",
+      percentage: "2.5x",
+      label: "Lead Volume (LinkedIn)",
       isIncrease: true,
-      logo: "https://pro-section.ui-layouts.com/customer/amazon.png",
+      logo: "LINKEDIN",
     },
     {
-      percentage: "$100K",
-      label: "Revenue Generated",
+      percentage: "1.2M",
+      label: "YouTube Reach",
       isIncrease: true,
-      logo: "https://pro-section.ui-layouts.com/customer/alibaba.png",
+      logo: "YOUTUBE",
     },
   ];
 
   return (
     <div 
+      id="community"
       ref={containerRef}
       className="bg-transparent py-32 px-6 overflow-hidden relative"
     >
@@ -63,7 +64,7 @@ export default function Testimonial1() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20">
             <Users className="w-3.5 h-3.5 text-red-400" />
-            <span className="text-[10px] font-bold text-red-300 uppercase tracking-widest">Our Community</span>
+            <span className="text-[10px] font-bold text-red-300 uppercase tracking-widest">Our Impact</span>
           </div>
         </motion.div>
 
@@ -83,7 +84,7 @@ export default function Testimonial1() {
                     <div className="relative overflow-hidden sm:w-20 w-14 h-14 transition-all duration-500 rounded-full border-2 border-white/20 shadow-xl group-hover:w-48">
                       <img
                         src={`https://pro-section.ui-layouts.com/people/aam1.png`}
-                        alt="Person smiling"
+                        alt="Brand owner"
                         className="object-cover w-full h-full"
                       />
                     </div>
@@ -94,15 +95,13 @@ export default function Testimonial1() {
                   className="max-w-xs bg-gray-900 text-white p-4 rounded-xl shadow-2xl border border-white/10 z-50 animate-in fade-in zoom-in duration-200"
                 >
                   <p className="mb-2 text-xs leading-relaxed opacity-90">
-                    "It's great to have a good sense of where my money is going
-                    and be able to adjust as necessary. I love the
-                    transparency."
+                    "Katalyst transformed our ad spend into pure profit. The transparency in reporting is exactly what we needed."
                   </p>
-                  <p className="font-bold text-[10px] uppercase tracking-wider text-red-400">John Doe</p>
+                  <p className="font-bold text-[10px] uppercase tracking-wider text-red-400">Marcus Thorne</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
-            companies 
+            brands
             <br />
             and their
             <TooltipProvider>
@@ -112,7 +111,7 @@ export default function Testimonial1() {
                     <div className="relative overflow-hidden sm:w-20 w-14 h-14 transition-all duration-500 rounded-full border-2 border-white/20 shadow-xl group-hover:w-48">
                       <img
                         src={`https://pro-section.ui-layouts.com/people/aam3.jpg`}
-                        alt="Employee"
+                        alt="Marketing director"
                         className="object-cover w-full h-full"
                       />
                     </div>
@@ -123,13 +122,13 @@ export default function Testimonial1() {
                   className="max-w-xs bg-gray-900 text-white p-4 rounded-xl shadow-2xl border border-white/10 z-50 animate-in fade-in zoom-in duration-200"
                 >
                   <p className="mb-2 text-xs leading-relaxed opacity-90">
-                    "Collaborating globally has never been smoother. The transparency and efficiency empower our teams to move faster."
+                    "Scaling globally became a data-driven process rather than a guessing game. Our ROI has never been higher."
                   </p>
-                  <p className="font-bold text-[10px] uppercase tracking-wider text-red-400">Sarah Jenkins</p>
+                  <p className="font-bold text-[10px] uppercase tracking-wider text-red-400">Elena Rodriguez</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
-            brands to scale.
+            audiences to connect.
           </motion.h2>
           
           <motion.h3 
@@ -138,7 +137,7 @@ export default function Testimonial1() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Manage marketing performance effortlessly.
+            Scale your performance marketing.
           </motion.h3>
         </div>
 
@@ -156,11 +155,11 @@ export default function Testimonial1() {
             >
               <div className="w-full relative h-12 overflow-hidden flex items-center justify-center">
                 {/* Logo that slides up on hover */}
-                <img
-                  src={stat?.logo}
-                  alt={stat.label}
-                  className="w-[70%] h-8 object-contain invert grayscale opacity-60 group-hover:-translate-y-16 group-hover:opacity-0 transition-all duration-500 ease-in-out"
-                />
+                <div className="absolute inset-0 flex items-center justify-center group-hover:-translate-y-16 group-hover:opacity-0 transition-all duration-500 ease-in-out">
+                  <span className="text-xl font-black tracking-tighter text-white/40 uppercase">
+                    {stat.logo}
+                  </span>
+                </div>
                 
                 {/* Stat that slides in from bottom on hover */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center translate-y-16 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-in-out">
@@ -174,7 +173,7 @@ export default function Testimonial1() {
                       {stat.percentage}
                     </span>
                   </div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mt-1">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mt-1 text-center">
                     {stat.label}
                   </p>
                 </div>
