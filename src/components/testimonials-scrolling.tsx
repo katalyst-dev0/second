@@ -118,17 +118,17 @@ export function TestimonialsScrolling() {
             animationFillMode: "forwards",
           }}
         >
-          {/* Top Fade Overlay */}
-          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent z-20 pointer-events-none" />
-          
-          <div className="flex justify-center gap-6 py-4 overflow-hidden h-[700px]">
+          <div 
+            className="flex justify-center gap-6 py-4 overflow-hidden h-[700px]"
+            style={{
+              maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
+              WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
+            }}
+          >
             <TestimonialsColumn testimonials={firstColumn} duration={15} />
             <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} />
             <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} />
           </div>
-
-          {/* Bottom Fade Overlay */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none" />
         </div>
       </div>
       
