@@ -24,25 +24,25 @@ export default function Testimonial1() {
   const stats: StatItem[] = [
     {
       percentage: "80%",
-      label: "manual payment tasks",
-      isIncrease: false,
+      label: "Ad Efficiency Increase",
+      isIncrease: true,
       logo: "https://pro-section.ui-layouts.com/customer/netflix.png",
     },
     {
       percentage: "30%",
-      label: "international fees",
+      label: "Lower Cost Per Lead",
       isIncrease: false,
       logo: "https://pro-section.ui-layouts.com/customer/vercel.png",
     },
     {
       percentage: "25%",
-      label: "payment reconciliation",
-      isIncrease: false,
+      label: "Higher Conversion Rate",
+      isIncrease: true,
       logo: "https://pro-section.ui-layouts.com/customer/amazon.png",
     },
     {
       percentage: "$100K",
-      label: "saved per year",
+      label: "Revenue Generated",
       isIncrease: true,
       logo: "https://pro-section.ui-layouts.com/customer/alibaba.png",
     },
@@ -129,7 +129,7 @@ export default function Testimonial1() {
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
-            employees to contribute.
+            brands to scale.
           </motion.h2>
           
           <motion.h3 
@@ -138,7 +138,7 @@ export default function Testimonial1() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Manage compensation effortlessly.
+            Manage marketing performance effortlessly.
           </motion.h3>
         </div>
 

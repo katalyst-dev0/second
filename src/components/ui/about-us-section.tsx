@@ -2,80 +2,77 @@
 
 import { useEffect, useRef, useState } from "react"
 import {
-  Pen,
-  PaintBucket,
-  Home,
-  Ruler,
-  PenTool,
-  Building2,
+  Search,
+  FileText,
+  Sparkles,
+  Zap,
+  BarChart3,
+  TrendingUp,
   Award,
   Users,
-  Calendar,
+  Target,
   CheckCircle,
-  Sparkles,
   Star,
   ArrowRight,
-  Zap,
-  TrendingUp,
 } from "lucide-react"
 import { motion, useScroll, useTransform, useInView } from "framer-motion"
 
 const services = [
   {
-    icon: <Pen className="w-6 h-6" />,
+    icon: <Search className="w-6 h-6" />,
     secondaryIcon: <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-red-400" />,
-    title: "Interior",
+    title: "Market Audit",
     description:
-      "Transform living spaces through thoughtful layouts, textured materials, and layered lighting that feel both modern and intimate.",
+      "Analyze trends, competitor strategies, and current campaign performance to identify growth opportunities.",
     position: "left",
   },
   {
-    icon: <Home className="w-6 h-6" />,
+    icon: <FileText className="w-6 h-6" />,
     secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-red-400" />,
-    title: "Exterior",
+    title: "Strategy",
     description:
-      "Craft bold facades and landscaped edges that balance structure with softness and amplify every arrival moment.",
+      "Craft bold marketing plans that balance creative storytelling with technical precision and target accuracy.",
     position: "left",
   },
   {
-    icon: <PenTool className="w-6 h-6" />,
+    icon: <Sparkles className="w-6 h-6" />,
     secondaryIcon: <Star className="w-4 h-4 absolute -top-1 -right-1 text-red-400" />,
-    title: "Design",
+    title: "Creative",
     description:
-      "Blueprints come alive through collaborative workshops, rigorous research, and immersive 3D visualization.",
+      "High-performance ad creatives and copy designed to stop the scroll and drive immediate action.",
     position: "left",
   },
   {
-    icon: <PaintBucket className="w-6 h-6" />,
+    icon: <Zap className="w-6 h-6" />,
     secondaryIcon: <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-red-400" />,
-    title: "Decoration",
-    description:
-      "Curated textiles, art, and accessories add soul while keeping each space aligned to a cohesive palette.",
-    position: "right",
-  },
-  {
-    icon: <Ruler className="w-6 h-6" />,
-    secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-red-400" />,
-    title: "Planning",
-    description:
-      "Every milestone, budget, and timeline is mapped so projects flow with confidence from concept to completion.",
-    position: "right",
-  },
-  {
-    icon: <Building2 className="w-6 h-6" />,
-    secondaryIcon: <Star className="w-4 h-4 absolute -top-1 -right-1 text-red-400" />,
     title: "Execution",
     description:
-      "We coordinate craftspeople, trades, and technology to deliver high-touch results with flawless detail.",
+      "Launching and managing multi-channel campaigns with absolute focus on efficiency and budget control.",
+    position: "right",
+  },
+  {
+    icon: <BarChart3 className="w-6 h-6" />,
+    secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-red-400" />,
+    title: "Performance",
+    description:
+      "Real-time analytics and attribution to ensure every dollar of ad spend is accounted for and working.",
+    position: "right",
+  },
+  {
+    icon: <TrendingUp className="w-6 h-6" />,
+    secondaryIcon: <Star className="w-4 h-4 absolute -top-1 -right-1 text-red-400" />,
+    title: "Scaling",
+    description:
+      "Continuously refining targets and creative to scale performance without diminishing returns on investment.",
     position: "right",
   },
 ]
 
 const stats = [
-  { icon: <Award className="w-6 h-6" />, value: 150, label: "Projects Completed", suffix: "+" },
-  { icon: <Users className="w-6 h-6" />, value: 1200, label: "Happy Clients", suffix: "+" },
-  { icon: <Calendar className="w-6 h-6" />, value: 12, label: "Years Experience", suffix: "" },
-  { icon: <TrendingUp className="w-6 h-6" />, value: 98, label: "Satisfaction Rate", suffix: "%" },
+  { icon: <Award className="w-6 h-6" />, value: 100, label: "Campaigns Launched", suffix: "+" },
+  { icon: <Users className="w-6 h-6" />, value: 1500, label: "Growth Goals Met", suffix: "+" },
+  { icon: <Target className="w-6 h-6" />, value: 10, label: "Views Generated", suffix: "M+" },
+  { icon: <TrendingUp className="w-6 h-6" />, value: 98, label: "ROI Target Success", suffix: "%" },
 ]
 
 const containerVariants = {
@@ -167,9 +164,9 @@ export default function AboutUsSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Zap className="w-4 h-4" />
-            DISCOVER OUR STORY
+            DISCOVER OUR METHODOLOGY
           </motion.span>
-          <h2 className="text-4xl md:text-5xl font-light mb-4 text-center tracking-tight">About Us</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-4 text-center tracking-tight">Our Process</h2>
           <motion.div
             className="w-24 h-1 bg-white rounded-full"
             initial={{ width: 0 }}
@@ -184,7 +181,7 @@ export default function AboutUsSection() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          We are a passionate team of designers and architects dedicated to creating beautiful, functional spaces that inspire and elevate everyday living.
+          We are a team of performance marketers and creative strategists dedicated to scaling brands through data-driven campaigns and absolute transparency.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
@@ -207,7 +204,7 @@ export default function AboutUsSection() {
               >
                 <img
                   src="https://images.unsplash.com/photo-1747582411588-f9b4acabe995?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.1.0"
-                  alt="Modern Design"
+                  alt="Digital Performance"
                   className="w-full h-full object-cover"
                 />
                 <motion.div
@@ -221,7 +218,7 @@ export default function AboutUsSection() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Our Portfolio <ArrowRight className="w-4 h-4" />
+                    Our Results <ArrowRight className="w-4 h-4" />
                   </motion.button>
                 </motion.div>
               </motion.div>
@@ -289,8 +286,8 @@ export default function AboutUsSection() {
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <div className="flex-1 text-center md:text-left">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-2 tracking-tight">Ready to transform your space?</h3>
-            <p className="text-gray-300 text-lg">Let's create something beautiful together.</p>
+            <h3 className="text-2xl md:text-3xl font-semibold mb-2 tracking-tight">Ready to scale your brand?</h3>
+            <p className="text-gray-300 text-lg">Let's create something profitable together.</p>
           </div>
           <motion.button
             className="bg-white text-black px-8 py-4 rounded-full flex items-center gap-2 font-bold transition-all shadow-xl hover:shadow-white/10"

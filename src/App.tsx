@@ -106,10 +106,10 @@ const App = () => {
         <h1
           className="text-6xl md:text-7xl lg:text-[80px] font-normal leading-[1.1] tracking-tight mb-5"
         >
-          Katalyst Growth
+          Katalyst Marketing
           <br />
-          <span className="bg-gradient-to-r from-white via-gray-400 to-gray-500 bg-clip-text text-transparent">
-            Digital performance that scales
+          <span className="bg-gradient-to-r from-white via-gray-400 to-gray-500 bg-clip-text text-transparent italic">
+            Performance that scales
           </span>
         </h1>
 
@@ -117,7 +117,7 @@ const App = () => {
         <p
         className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed"
         >
-          Integrated marketing, creative, and analytics systems keep your campaigns accountable and always in motion.
+          From high-performance ad campaigns to data-driven growth strategies, we build systems that produce measurable results and predictable ROI.
         </p>
 
         {/* CTA */}

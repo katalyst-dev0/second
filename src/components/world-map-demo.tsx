@@ -32,9 +32,9 @@ export default function WorldMapDemo() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Remote{" "}
+          Global{" "}
           <span className="bg-gradient-to-r from-white via-gray-400 to-gray-500 bg-clip-text text-transparent italic">
-            {"Connectivity".split("").map((word, idx) => (
+            {"Performance".split("").map((word, idx) => (
               <motion.span
                 key={idx}
                 className="inline-block"
@@ -57,9 +57,9 @@ export default function WorldMapDemo() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Break free from traditional boundaries. Work from anywhere, at the
-          comfort of your own studio apartment. Perfect for Nomads and
-          Travellers who demand zero-latency collaboration.
+          Break free from traditional boundaries. Reach audiences anywhere, with the
+          power of high-performance digital marketing. Perfect for brands that demand 
+          absolute scalability and predictable growth.
         </motion.p>
       </div>
 

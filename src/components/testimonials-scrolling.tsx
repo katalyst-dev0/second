@@ -6,55 +6,55 @@ import { MessageSquareQuote } from "lucide-react";
 
 const testimonials = [
   {
-    text: "Stellar.ai has completely transformed how our team collaborates. The AI-driven insights are a game-changer.",
+    text: "Katalyst has completely transformed how our brand scales. The performance insights are a total game-changer.",
     image: "https://randomuser.me/api/portraits/women/1.jpg",
     name: "Briana Patton",
     role: "Operations Manager",
   },
   {
-    text: "Implementation was seamless. We were up and running in days, not weeks. The interface is remarkably intuitive.",
+    text: "Implementation of our ad strategy was seamless. We saw positive ROI in days, not weeks. Highly recommended.",
     image: "https://randomuser.me/api/portraits/men/2.jpg",
     name: "Bilal Ahmed",
     role: "IT Director",
   },
   {
-    text: "The support team is unparalleled. They actually understand technical hurdles and guide you to a solution.",
+    text: "The marketing team at Katalyst is unparalleled. They actually understand technical hurdles and guide you to growth.",
     image: "https://randomuser.me/api/portraits/women/3.jpg",
     name: "Saman Malik",
     role: "Support Lead",
   },
   {
-    text: "A truly scalable solution that keeps pace with our rapid growth. It's the infrastructure every startup needs.",
+    text: "A truly scalable solution that keeps pace with our rapid growth. It's the marketing infrastructure every startup needs.",
     image: "https://randomuser.me/api/portraits/men/4.jpg",
     name: "Omar Raza",
     role: "CEO",
   },
   {
-    text: "Robust, reliable, and incredibly fast. It's rare to find a platform that delivers on all its promises like this.",
+    text: "Robust, reliable, and incredibly fast campaign execution. It's rare to find a partner that delivers like this.",
     image: "https://randomuser.me/api/portraits/women/5.jpg",
     name: "Zainab Hussain",
     role: "Project Lead",
   },
   {
-    text: "The level of customization available is incredible. It finally feels like we have a tool built just for us.",
+    text: "The level of creative customization available is incredible. It finally feels like we have a strategy built just for us.",
     image: "https://randomuser.me/api/portraits/women/6.jpg",
     name: "Aliza Khan",
     role: "Analyst",
   },
   {
-    text: "Our operational efficiency has jumped 40% since migrating. The ROI was evident within the first month.",
+    text: "Our conversion efficiency has jumped 40% since migrating our ads. The ROI was evident within the first month.",
     image: "https://randomuser.me/api/portraits/men/7.jpg",
     name: "Farhan Siddiqui",
     role: "Marketing Head",
   },
   {
-    text: "Stellar.ai is the secret weapon for our global remote team. Distance no longer matters for high-fidelity work.",
+    text: "Katalyst is the secret weapon for our global reach. Distance no longer matters for high-fidelity performance.",
     image: "https://randomuser.me/api/portraits/women/8.jpg",
     name: "Sana Sheikh",
     role: "Sales Lead",
   },
   {
-    text: "Beautifully designed and technically sound. It's the standard for modern enterprise software.",
+    text: "Beautifully designed campaigns and technically sound attribution. It's the standard for modern marketing.",
     image: "https://randomuser.me/api/portraits/men/9.jpg",
     name: "Hassan Ali",
     role: "E-commerce Manager",
@@ -105,7 +105,7 @@ export function TestimonialsScrolling() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Join thousands of teams who have elevated their workflow and unlocked new levels of productivity with Stellar.ai.
+            Join hundreds of brands who have elevated their growth and unlocked new levels of performance with Katalyst.
           </motion.p>
         </div>
 

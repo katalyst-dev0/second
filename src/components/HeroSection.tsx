@@ -55,12 +55,12 @@ const HeroSection = () => (
           backgroundClip: "text",
         }}
       >
-        Grow
+        Scale
       </h1>
       <p className="text-hero-sub text-center text-lg leading-8 max-w-md mt-4 opacity-80">
-        The most powerful AI ever deployed
+        The most powerful performance marketing
         <br />
-        in talent acquisition
+        for scalable brands
       </p>
       <div className="mt-8 mb-[66px]">
         <Button variant="heroSecondary" className="px-[29px] py-[24px] text-base font-normal">
