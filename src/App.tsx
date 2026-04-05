@@ -60,9 +60,61 @@ const App = () => {
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    closeMobileMenu();
+    
+    const target = document.querySelector(id) as HTMLElement;
+    if (target && locoScrollRef.current) {
+      locoScrollRef.current.scrollTo(target, {
+        duration: 1.5,
+        easing: [0.16, 1, 0.3, 1], // Smooth custom easing
+      });
+    } else if (target) {
+      // Fallback if locoScroll is not initialized
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <GradientBackground />
+      
+      {/* Mobile Menu Overlay - Moved outside scroll container for true full-screen */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-xl z-[100] md:hidden animate-fade-in-overlay flex flex-col p-6 h-[100dvh] w-full">
+          <div className="flex items-center justify-between mb-12">
+            <KatalystLogo width={140} height={30} />
+            <button 
+              onClick={closeMobileMenu}
+              className="p-2 text-white hover:bg-white/10 rounded-full transition-colors border border-white/10"
+              aria-label="Close mobile menu"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+
+          <div className="flex-1 flex flex-col items-center justify-center gap-8 text-center">
+            <a href="#process" onClick={(e) => scrollToSection(e, "#process")} className="text-4xl font-light tracking-tighter text-white/70 hover:text-white transition-colors">Our Process</a>
+            <a href="#reach" onClick={(e) => scrollToSection(e, "#reach")} className="text-4xl font-light tracking-tighter text-white/70 hover:text-white transition-colors">Global Reach</a>
+            <a href="#community" onClick={(e) => scrollToSection(e, "#community")} className="text-4xl font-light tracking-tighter text-white/70 hover:text-white transition-colors">Community</a>
+            <a href="#feedback" onClick={(e) => scrollToSection(e, "#feedback")} className="text-4xl font-light tracking-tighter text-white/70 hover:text-white transition-colors">Feedback</a>
+            
+            <div className="w-12 h-px bg-white/20 my-2" />
+
+            <a
+              href="https://calendly.com/kompanykatalyst/discovery-call"
+              target="_blank"
+              rel="noreferrer"
+              onClick={closeMobileMenu}
+              className="bg-white text-black px-10 py-4 rounded-full text-lg font-bold shadow-xl text-center active:scale-95 transition-transform w-full max-w-[280px]"
+            >
+              Schedule a consult
+            </a>
+          </div>
+        </div>
+      )}
+
       <div
         ref={scrollContainerRef}
         data-scroll-container
@@ -74,7 +126,11 @@ const App = () => {
             <div className="flex items-center gap-3 flex-shrink-0">
               <button 
                 onClick={() => {
-                  window.scrollTo({top: 0, behavior: 'smooth'});
+                  if (locoScrollRef.current) {
+                    locoScrollRef.current.scrollTo(0, { duration: 1.5 });
+                  } else {
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                  }
                   closeMobileMenu();
                 }}
                 className="cursor-pointer bg-transparent border-none p-0"
@@ -90,10 +146,10 @@ const App = () => {
 
             {/* Desktop Nav Links */}
             <div className="hidden md:flex items-center gap-8">
-              <a href="#process" className="text-sm text-gray-300 hover:text-white transition-colors">Our Process</a>
-              <a href="#reach" className="text-sm text-gray-300 hover:text-white transition-colors">Global Reach</a>
-              <a href="#community" className="text-sm text-gray-300 hover:text-white transition-colors">Community</a>
-              <a href="#feedback" className="text-sm text-gray-300 hover:text-white transition-colors">Feedback</a>
+              <a href="#process" onClick={(e) => scrollToSection(e, "#process")} className="text-sm text-gray-300 hover:text-white transition-colors">Our Process</a>
+              <a href="#reach" onClick={(e) => scrollToSection(e, "#reach")} className="text-sm text-gray-300 hover:text-white transition-colors">Global Reach</a>
+              <a href="#community" onClick={(e) => scrollToSection(e, "#community")} className="text-sm text-gray-300 hover:text-white transition-colors">Community</a>
+              <a href="#feedback" onClick={(e) => scrollToSection(e, "#feedback")} className="text-sm text-gray-300 hover:text-white transition-colors">Feedback</a>
             </div>
 
             {/* CTA and Hamburger */}
@@ -114,27 +170,6 @@ const App = () => {
                 {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
-
-            {/* Mobile Menu Overlay */}
-            {isMobileMenuOpen && (
-              <div className="fixed inset-0 bg-black/95 z-40 md:hidden animate-fade-in-overlay flex flex-col items-center justify-center p-8">
-                <div className="flex flex-col gap-8 text-center">
-                  <a href="#process" onClick={closeMobileMenu} className="text-2xl font-medium text-white hover:text-red-400 transition-colors">Our Process</a>
-                  <a href="#reach" onClick={closeMobileMenu} className="text-2xl font-medium text-white hover:text-red-400 transition-colors">Global Reach</a>
-                  <a href="#community" onClick={closeMobileMenu} className="text-2xl font-medium text-white hover:text-red-400 transition-colors">Community</a>
-                  <a href="#feedback" onClick={closeMobileMenu} className="text-2xl font-medium text-white hover:text-red-400 transition-colors">Feedback</a>
-                  <a
-                    href="https://calendly.com/kompanykatalyst/discovery-call"
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={closeMobileMenu}
-                    className="mt-4 bg-white text-black px-8 py-4 rounded-full text-lg font-bold shadow-xl"
-                  >
-                    Schedule a consult
-                  </a>
-                </div>
-              </div>
-            )}
           </nav>
 
           {/* Hero Section */}
