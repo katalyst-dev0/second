@@ -12,7 +12,7 @@ export default function WorldMapDemo() {
     <div 
       id="reach"
       ref={containerRef}
-      className="py-32 bg-transparent w-full overflow-hidden"
+      className="py-20 md:py-32 bg-transparent w-full overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 text-center">
         {/* Badge */}
@@ -28,7 +28,7 @@ export default function WorldMapDemo() {
 
         {/* Heading */}
         <motion.h2 
-          className="text-4xl md:text-6xl font-normal tracking-tighter mb-6 leading-tight text-white"
+          className="text-3xl sm:text-4xl md:text-6xl font-normal tracking-tighter mb-6 leading-tight text-white"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.1 }}
@@ -47,13 +47,13 @@ export default function WorldMapDemo() {
               </motion.span>
             ))}
           </span>
-          <br />
-          Unbound.
+          <br className="sm:hidden" />
+          {" "}Unbound.
         </motion.h2>
 
         {/* Subtext */}
         <motion.p 
-          className="text-lg text-gray-400 max-w-2xl mx-auto mb-16 leading-relaxed"
+          className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-12 md:mb-16 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -66,12 +66,12 @@ export default function WorldMapDemo() {
 
       {/* Map Container - Centered and limited width */}
       <motion.div 
-        className="max-w-4xl mx-auto px-6 relative"
+        className="max-w-5xl mx-auto px-4 md:px-6 relative"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
-        <div className="relative rounded-3xl overflow-hidden glass-card p-2 shadow-2xl shadow-black/50">
+        <div className="relative rounded-2xl md:rounded-3xl overflow-hidden glass-card p-1 md:p-2 shadow-2xl shadow-black/50">
           <WorldMap
           lineColor="#dc2626" 
             dots={[

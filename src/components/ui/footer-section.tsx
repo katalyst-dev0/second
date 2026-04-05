@@ -57,23 +57,28 @@ const footerLinks: FooterSection[] = [
 
 export function Footer() {
 	return (
-		<footer className="md:rounded-t-[48px] relative w-full max-w-7xl mx-auto flex flex-col items-center rounded-t-3xl border-t border-white/10 bg-[radial-gradient(35%_128px_at_50%_0%,rgba(207,47,47,0.15),transparent)] px-6 pt-16 pb-32 lg:pt-24 lg:pb-48">
+		<footer className="md:rounded-t-[48px] relative w-full max-w-7xl mx-auto flex flex-col items-center rounded-t-3xl border-t border-white/10 bg-[radial-gradient(35%_128px_at_50%_0%,rgba(207,47,47,0.15),transparent)] px-6 pt-16 pb-12 lg:pt-24 lg:pb-24">
 			<div className="bg-red-500/20 absolute top-0 right-1/2 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-1/2 rounded-full blur" />
 
-			<div className="grid w-full gap-8 xl:grid-cols-3 xl:gap-8">
-				<AnimatedContainer className="space-y-4">
-					<KatalystLogo width={160} height={40} />
-					<p className="text-gray-400 mt-8 text-sm md:mt-0">
-						© {new Date().getFullYear()} Katalyst. All rights reserved.
+			<div className="grid w-full gap-12 xl:grid-cols-3 xl:gap-8">
+				<AnimatedContainer className="flex flex-col items-center xl:items-start text-center xl:text-left">
+					<div className="hidden sm:block">
+						<KatalystLogo width={180} height={39} />
+					</div>
+					<div className="sm:hidden">
+						<KatalystLogo width={140} height={30} />
+					</div>
+					<p className="text-gray-400 mt-6 text-xs sm:text-sm max-w-xs">
+						Building high-performance marketing systems that scale with your ambitions.
 					</p>
 				</AnimatedContainer>
 
-				<div className="mt-10 grid grid-cols-2 gap-8 md:grid-cols-4 xl:col-span-2 xl:mt-0">
+				<div className="grid grid-cols-2 gap-8 md:grid-cols-4 xl:col-span-2">
 					{footerLinks.map((section, index) => (
 						<AnimatedContainer key={section.label} delay={0.1 + index * 0.1}>
-							<div className="mb-10 md:mb-0">
+							<div className="mb-8 md:mb-0 flex flex-col items-center md:items-start text-center md:text-left">
 								<h3 className="text-xs font-bold uppercase tracking-widest text-white mb-6">{section.label}</h3>
-								<ul className="text-gray-400 mt-4 space-y-2 text-sm">
+								<ul className="text-gray-400 space-y-3 text-sm flex flex-col items-center md:items-start">
 									{section.links.map((link) => (
 										<li key={link.title}>
 											<a
@@ -91,9 +96,20 @@ export function Footer() {
 					))}
 				</div>
 			</div>
+
+			{/* Bottom Copyright Section */}
+			<div className="w-full mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+				<p className="text-gray-500 text-[10px] sm:text-xs uppercase tracking-widest">
+					© {new Date().getFullYear()} Katalyst Marketing. All rights reserved.
+				</p>
+				<div className="flex gap-6">
+					<a href="#" className="text-gray-500 hover:text-white text-[10px] uppercase tracking-widest transition-colors">Privacy</a>
+					<a href="#" className="text-gray-500 hover:text-white text-[10px] uppercase tracking-widest transition-colors">Terms</a>
+				</div>
+			</div>
 		</footer>
 	);
-};
+}
 
 type ViewAnimationProps = {
 	delay?: number;

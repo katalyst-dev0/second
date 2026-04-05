@@ -158,7 +158,7 @@ export default function AboutUsSection() {
       <motion.div className="container mx-auto max-w-6xl relative z-10" variants={containerVariants} initial="hidden" animate={isInView ? "visible" : "hidden"}>
         <motion.div className="flex flex-col items-center mb-6" variants={itemVariants}>
           <motion.span
-            className="text-white font-medium mb-2 flex items-center gap-2 text-sm tracking-wider"
+            className="text-white font-medium mb-2 flex items-center gap-2 text-xs sm:text-sm tracking-wider"
             initial={{ opacity: 0, y: -10 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -166,9 +166,9 @@ export default function AboutUsSection() {
             <Zap className="w-4 h-4" />
             DISCOVER OUR METHODOLOGY
           </motion.span>
-          <h2 className="text-4xl md:text-5xl font-light mb-4 text-center tracking-tight">Our Process</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light mb-4 text-center tracking-tight">Our Process</h2>
           <motion.div
-            className="w-24 h-1 bg-white rounded-full"
+            className="w-20 sm:w-24 h-1 bg-white rounded-full"
             initial={{ width: 0 }}
             animate={{ width: 96 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -176,7 +176,7 @@ export default function AboutUsSection() {
         </motion.div>
 
         <motion.p
-          className="text-center max-w-2xl mx-auto mb-16 text-gray-400 leading-relaxed"
+          className="text-center max-w-2xl mx-auto mb-12 md:mb-16 text-gray-400 leading-relaxed text-sm sm:text-base px-4"
           variants={fadeVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -184,8 +184,8 @@ export default function AboutUsSection() {
           We are a team of performance marketers and creative strategists dedicated to scaling brands through data-driven campaigns and absolute transparency.
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          <div className="space-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 relative">
+          <div className="space-y-12 md:space-y-16 order-2 md:order-1">
             {services
               .filter((service) => service.position === "left")
               .map((service, idx) => (
@@ -193,8 +193,8 @@ export default function AboutUsSection() {
               ))}
           </div>
 
-        <div className="flex justify-center items-center order-first md:order-none mb-8 md:mb-0">
-          <motion.div className="relative w-full max-w-xs" variants={fadeVariants} initial="hidden" animate={isInView ? "visible" : "hidden"}>
+        <div className="flex justify-center items-center order-1 md:order-2 mb-4 md:mb-0">
+          <motion.div className="relative w-full max-w-[280px] sm:max-w-xs" variants={fadeVariants} initial="hidden" animate={isInView ? "visible" : "hidden"}>
               <motion.div
                 className="rounded-3xl overflow-hidden shadow-2xl"
                 initial={{ scale: 0.9, opacity: 0 }}
@@ -258,7 +258,7 @@ export default function AboutUsSection() {
             </motion.div>
           </div>
 
-          <div className="space-y-16">
+          <div className="space-y-12 md:space-y-16 order-3 md:order-3">
             {services
               .filter((service) => service.position === "right")
               .map((service, idx) => (
@@ -269,7 +269,7 @@ export default function AboutUsSection() {
 
         <motion.div
           ref={statsRef}
-          className="mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-transparent"
+          className="mt-20 md:mt-24 grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 md:gap-6 bg-transparent"
           initial="hidden"
           animate={isStatsInView ? "visible" : "hidden"}
           variants={containerVariants}
@@ -311,7 +311,7 @@ interface ServiceItemProps {
 function ServiceItem({ service, delay, direction }: ServiceItemProps) {
   return (
     <motion.div
-      className={`flex flex-col group ${direction === "left" ? "md:items-end md:text-right" : "md:items-start md:text-left"}`}
+      className={`flex flex-col items-center text-center group ${direction === "left" ? "md:items-end md:text-right" : "md:items-start md:text-left"}`}
       initial="hidden"
       animate="visible"
       variants={itemVariants}
@@ -319,7 +319,7 @@ function ServiceItem({ service, delay, direction }: ServiceItemProps) {
       whileHover={{ y: -5, transition: { duration: 0.2 } }}
     >
       <motion.div
-        className={`flex items-center gap-4 mb-4 ${direction === "left" ? "md:flex-row-reverse" : "md:flex-row"}`}
+        className={`flex flex-col items-center gap-4 mb-4 ${direction === "left" ? "md:flex-row-reverse" : "md:flex-row"}`}
         initial={{ x: direction === "left" ? -20 : 20, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: delay + 0.2 }}
@@ -331,7 +331,7 @@ function ServiceItem({ service, delay, direction }: ServiceItemProps) {
         <h3 className="text-xl font-semibold text-white group-hover:text-red-400 transition-colors duration-300 tracking-tight">{service.title}</h3>
       </motion.div>
       <motion.p
-        className={`text-sm text-gray-400 leading-relaxed ${direction === "left" ? "md:pr-0" : "md:pl-0"}`}
+        className={`text-sm text-gray-400 leading-relaxed ${direction === "left" ? "md:pr-0 md:text-right" : "md:pl-0 md:text-left"}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: delay + 0.4 }}
@@ -339,7 +339,7 @@ function ServiceItem({ service, delay, direction }: ServiceItemProps) {
         {service.description}
       </motion.p>
       <motion.div
-        className={`mt-4 flex items-center text-white text-xs font-bold opacity-0 group-hover:opacity-100 transition-all duration-300 ${direction === "left" ? "md:justify-end" : "md:justify-start"}`}
+        className={`mt-4 flex items-center text-white text-xs font-bold opacity-0 group-hover:opacity-100 transition-all duration-300 justify-center ${direction === "left" ? "md:justify-end" : "md:justify-start"}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 0 }}
       >
@@ -375,17 +375,17 @@ function StatCounter({ stat, delay }: StatCounterProps) {
 
   return (
     <motion.div
-      className="flex flex-col items-start gap-2 text-white"
+      className="flex flex-col items-center md:items-start gap-2 text-white text-center md:text-left"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay }}
     >
       <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-white/10 text-white">{stat.icon}</div>
-      <p className="text-2xl font-semibold">
+      <p className="text-2xl sm:text-3xl font-semibold">
         {value}
         {stat.suffix}
       </p>
-      <p className="text-xs uppercase tracking-[0.3em] text-gray-400">{stat.label}</p>
+      <p className="text-[10px] uppercase tracking-widest text-gray-400">{stat.label}</p>
     </motion.div>
   )
 }

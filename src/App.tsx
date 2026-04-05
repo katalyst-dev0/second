@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Star } from "lucide-react";
+import { Star, Menu, X } from "lucide-react";
 import type LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 
@@ -25,6 +25,7 @@ const App = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const locoScrollRef = useRef<LocomotiveScroll | null>(null);
   const [heroVisible, setHeroVisible] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const el = scrollContainerRef.current;
@@ -56,6 +57,9 @@ const App = () => {
     return () => cancelAnimationFrame(frame);
   }, []);
 
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
   return (
     <>
       <GradientBackground />
@@ -66,36 +70,76 @@ const App = () => {
       >
         <section data-scroll-section>
           {/* Navigation */}
-          <nav className="px-6 py-4 flex items-center justify-between max-w-7xl mx-auto">
+          <nav className="px-6 py-4 flex items-center justify-between max-w-7xl mx-auto relative z-50">
             <div className="flex items-center gap-3 flex-shrink-0">
               <button 
-                onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
+                onClick={() => {
+                  window.scrollTo({top: 0, behavior: 'smooth'});
+                  closeMobileMenu();
+                }}
                 className="cursor-pointer bg-transparent border-none p-0"
               >
-                <KatalystLogo width={180} height={48} />
+                <div className="hidden sm:block">
+                  <KatalystLogo width={200} height={43} />
+                </div>
+                <div className="sm:hidden">
+                  <KatalystLogo width={140} height={30} />
+                </div>
               </button>
             </div>
+
+            {/* Desktop Nav Links */}
             <div className="hidden md:flex items-center gap-8">
               <a href="#process" className="text-sm text-gray-300 hover:text-white transition-colors">Our Process</a>
               <a href="#reach" className="text-sm text-gray-300 hover:text-white transition-colors">Global Reach</a>
               <a href="#community" className="text-sm text-gray-300 hover:text-white transition-colors">Community</a>
               <a href="#feedback" className="text-sm text-gray-300 hover:text-white transition-colors">Feedback</a>
             </div>
-            <div className="flex items-center gap-6">
+
+            {/* CTA and Hamburger */}
+            <div className="flex items-center gap-4">
               <a
                 href="https://calendly.com/kompanykatalyst/discovery-call"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-white/10 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-white/20 transition-colors shadow-sm border border-white/10"
+                className="hidden sm:inline-flex bg-white/10 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-white/20 transition-colors shadow-sm border border-white/10 whitespace-nowrap"
               >
                 Book an Appointment
               </a>
+              <button 
+                onClick={toggleMobileMenu}
+                className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
+                aria-label="Toggle mobile menu"
+              >
+                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
             </div>
+
+            {/* Mobile Menu Overlay */}
+            {isMobileMenuOpen && (
+              <div className="fixed inset-0 bg-black/95 z-40 md:hidden animate-fade-in-overlay flex flex-col items-center justify-center p-8">
+                <div className="flex flex-col gap-8 text-center">
+                  <a href="#process" onClick={closeMobileMenu} className="text-2xl font-medium text-white hover:text-red-400 transition-colors">Our Process</a>
+                  <a href="#reach" onClick={closeMobileMenu} className="text-2xl font-medium text-white hover:text-red-400 transition-colors">Global Reach</a>
+                  <a href="#community" onClick={closeMobileMenu} className="text-2xl font-medium text-white hover:text-red-400 transition-colors">Community</a>
+                  <a href="#feedback" onClick={closeMobileMenu} className="text-2xl font-medium text-white hover:text-red-400 transition-colors">Feedback</a>
+                  <a
+                    href="https://calendly.com/kompanykatalyst/discovery-call"
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={closeMobileMenu}
+                    className="mt-4 bg-white text-black px-8 py-4 rounded-full text-lg font-bold shadow-xl"
+                  >
+                    Schedule a consult
+                  </a>
+                </div>
+              </div>
+            )}
           </nav>
 
           {/* Hero Section */}
           <header
-            className={`px-6 pt-24 pb-32 max-w-7xl mx-auto text-center relative overflow-hidden ${
+            className={`px-6 pt-16 md:pt-24 pb-20 md:pb-32 max-w-7xl mx-auto text-center relative overflow-hidden ${
               heroVisible ? "animate-fade-in-up" : "opacity-0"
             }`}
           >
@@ -111,7 +155,7 @@ const App = () => {
 
             {/* Heading */}
             <h1
-              className="text-6xl md:text-7xl lg:text-[80px] font-normal leading-[1.1] tracking-tight mb-5"
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-[80px] font-normal leading-tight md:leading-[1.1] tracking-tight mb-5"
             >
               Katalyst Marketing
               <br />
@@ -122,7 +166,7 @@ const App = () => {
 
             {/* Subheading */}
             <p
-            className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed"
+            className="text-base md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed px-4 md:px-0"
             >
               From high-performance ad campaigns to data-driven growth strategies, we build systems that produce measurable results and predictable ROI.
             </p>
@@ -135,51 +179,93 @@ const App = () => {
                 href="https://calendly.com/kompanykatalyst/discovery-call"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-white/10 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-white/20 transition-colors shadow-lg shadow-white/5 border border-white/10 inline-flex items-center justify-center"
+                className="bg-white/10 text-white px-8 py-3.5 rounded-full text-base font-medium hover:bg-white/20 transition-colors shadow-lg shadow-white/5 border border-white/10 inline-flex items-center justify-center"
               >
                 Schedule a growth consult
               </a>
             </div>
 
             {/* Video Section */}
-            <div className="relative mx-auto w-[92vw] max-w-5xl rounded-3xl overflow-hidden h-[320px] md:h-[420px] glass-card shadow-2xl">
+            <div className="relative mx-auto w-full max-w-5xl rounded-2xl md:rounded-3xl overflow-hidden h-[240px] sm:h-[320px] md:h-[420px] glass-card shadow-2xl">
               <WebGLShader />
             </div>
 
             {/* Digital Marketing Services Cloud */}
-            <div className="mt-24 pb-12 flex justify-center">
-              <div className="logo-cloud glass-card flex flex-wrap items-center justify-center gap-x-12 gap-y-8 opacity-90">
-                <span className="text-xl font-bold tracking-tighter text-white">
-                  META ADS
-                </span>
-                <span className="text-xl font-bold flex items-center gap-1 text-white">
-                  <div className="w-5 h-5 bg-white rounded-full" /> GOOGLE ADS
-                </span>
-                <span className="text-lg font-medium flex items-center gap-2 text-white">
-                  <div className="grid grid-cols-2 gap-0.5">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className="w-1 h-1 bg-white rounded-full" />
-                    ))}
-                  </div>
-                  SEO STRATEGY
-                </span>
-                <span className="text-2xl font-serif italic font-bold text-white">
-                  EMAIL
-                </span>
-                <span className="text-lg font-bold flex items-center gap-2 text-white">
-                  <div className="w-7 h-7 border-2 border-white rounded-full flex items-center justify-center text-[10px]">
-                    AN
-                  </div>
-                  ANALYTICS
-                </span>
-                <span className="text-lg font-semibold flex items-center gap-1.5 text-white">
-                  <div className="flex gap-0.5">
-                    {[1, 2, 3].map((i) => (
-                      <div key={i} className="w-1 h-1 bg-white rounded-full" />
-                    ))}
-                  </div>
-                  CONTENT
-                </span>
+            <div className="mt-16 md:mt-24 pb-12 flex justify-center px-4">
+              <div className="logo-cloud glass-card relative overflow-hidden opacity-90 py-5 md:py-6 px-6 md:px-12 rounded-full w-full max-w-lg md:max-w-none [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] md:[mask-image:none]">
+                {/* Marquee Container for Mobile */}
+                <div className="flex md:hidden items-center gap-12 animate-marquee whitespace-nowrap">
+                  {[1, 2].map((iteration) => (
+                    <div key={iteration} className="flex items-center gap-12 shrink-0">
+                      <span className="text-xs font-bold tracking-tighter text-white">
+                        META ADS
+                      </span>
+                      <span className="text-xs font-bold flex items-center gap-1 text-white">
+                        <div className="w-2.5 h-2.5 bg-white rounded-full shrink-0" /> GOOGLE ADS
+                      </span>
+                      <span className="text-xs font-medium flex items-center gap-2 text-white">
+                        <div className="grid grid-cols-2 gap-0.5 shrink-0">
+                          {[1, 2, 3, 4].map((i) => (
+                            <div key={i} className="w-0.5 h-0.5 bg-white rounded-full" />
+                          ))}
+                        </div>
+                        SEO STRATEGY
+                      </span>
+                      <span className="text-lg font-serif italic font-bold text-white">
+                        EMAIL
+                      </span>
+                      <span className="text-xs font-bold flex items-center gap-2 text-white">
+                        <div className="w-4 h-4 border-2 border-white rounded-full flex items-center justify-center text-[7px] shrink-0">
+                          AN
+                        </div>
+                        ANALYTICS
+                      </span>
+                      <span className="text-xs font-semibold flex items-center gap-1.5 text-white">
+                        <div className="flex gap-0.5 shrink-0">
+                          {[1, 2, 3].map((i) => (
+                            <div key={i} className="w-0.5 h-0.5 bg-white rounded-full" />
+                          ))}
+                        </div>
+                        CONTENT
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Standard Grid for Desktop */}
+                <div className="hidden md:flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+                  <span className="text-xl font-bold tracking-tighter text-white">
+                    META ADS
+                  </span>
+                  <span className="text-xl font-bold flex items-center gap-1 text-white">
+                    <div className="w-5 h-5 bg-white rounded-full" /> GOOGLE ADS
+                  </span>
+                  <span className="text-lg font-medium flex items-center gap-2 text-white">
+                    <div className="grid grid-cols-2 gap-0.5">
+                      {[1, 2, 3, 4].map((i) => (
+                        <div key={i} className="w-1 h-1 bg-white rounded-full" />
+                      ))}
+                    </div>
+                    SEO STRATEGY
+                  </span>
+                  <span className="text-2xl font-serif italic font-bold text-white">
+                    EMAIL
+                  </span>
+                  <span className="text-lg font-bold flex items-center gap-2 text-white">
+                    <div className="w-7 h-7 border-2 border-white rounded-full flex items-center justify-center text-[10px]">
+                      AN
+                    </div>
+                    ANALYTICS
+                  </span>
+                  <span className="text-lg font-semibold flex items-center gap-1.5 text-white">
+                    <div className="flex gap-0.5">
+                      {[1, 2, 3].map((i) => (
+                        <div key={i} className="w-1 h-1 bg-white rounded-full" />
+                      ))}
+                    </div>
+                    CONTENT
+                  </span>
+                </div>
               </div>
             </div>
           </header>

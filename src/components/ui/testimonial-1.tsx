@@ -52,7 +52,7 @@ export default function Testimonial1() {
     <div 
       id="community"
       ref={containerRef}
-      className="bg-transparent py-32 px-6 overflow-hidden relative"
+      className="bg-transparent py-20 md:py-32 px-6 overflow-hidden relative"
     >
       <div className="max-w-6xl mx-auto">
         {/* Community Badge */}
@@ -69,9 +69,9 @@ export default function Testimonial1() {
         </motion.div>
 
         {/* Main Heading with Images */}
-        <div className="text-center max-w-4xl mx-auto relative text-white mb-20">
+        <div className="text-center max-w-4xl mx-auto relative text-white mb-12 md:mb-20">
           <motion.h2 
-            className="text-4xl md:text-5xl lg:text-[72px] font-normal leading-[1.05] tracking-tighter mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-[72px] font-normal leading-tight md:leading-[1.05] tracking-tighter mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -80,8 +80,8 @@ export default function Testimonial1() {
             <TooltipProvider>
               <Tooltip delayDuration={200}>
                 <TooltipTrigger asChild>
-                  <div className="inline-block mx-3 align-middle relative group cursor-pointer">
-                    <div className="relative overflow-hidden sm:w-20 w-14 h-14 transition-all duration-500 rounded-full border-2 border-white/20 shadow-xl group-hover:w-48">
+                  <div className="inline-block mx-2 sm:mx-3 align-middle relative group cursor-pointer">
+                    <div className="relative overflow-hidden w-10 h-10 sm:w-16 md:w-20 sm:h-16 md:h-20 transition-all duration-500 rounded-full border-2 border-white/20 shadow-xl group-hover:w-32 sm:group-hover:w-48">
                       <img
                         src={`https://pro-section.ui-layouts.com/people/aam1.png`}
                         alt="Brand owner"
@@ -102,13 +102,13 @@ export default function Testimonial1() {
               </Tooltip>
             </TooltipProvider>
             brands
-            <br />
+            <br className="hidden sm:block" />
             and their
             <TooltipProvider>
               <Tooltip delayDuration={200}>
                 <TooltipTrigger asChild>
-                  <div className="inline-block mx-3 align-middle group cursor-pointer">
-                    <div className="relative overflow-hidden sm:w-20 w-14 h-14 transition-all duration-500 rounded-full border-2 border-white/20 shadow-xl group-hover:w-48">
+                  <div className="inline-block mx-2 sm:mx-3 align-middle group cursor-pointer">
+                    <div className="relative overflow-hidden w-10 h-10 sm:w-16 md:w-20 sm:h-16 md:h-20 transition-all duration-500 rounded-full border-2 border-white/20 shadow-xl group-hover:w-32 sm:group-hover:w-48">
                       <img
                         src={`https://pro-section.ui-layouts.com/people/aam3.jpg`}
                         alt="Marketing director"
@@ -132,7 +132,7 @@ export default function Testimonial1() {
           </motion.h2>
           
           <motion.h3 
-            className="text-4xl md:text-5xl lg:text-[72px] font-normal tracking-tighter bg-gradient-to-r from-white via-gray-400 to-gray-500 bg-clip-text text-transparent italic"
+            className="text-2xl sm:text-4xl md:text-5xl lg:text-[72px] font-normal tracking-tighter bg-gradient-to-r from-white via-gray-400 to-gray-500 bg-clip-text text-transparent italic"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -143,45 +143,74 @@ export default function Testimonial1() {
 
         {/* Stats Grid */}
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-transparent"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 bg-transparent"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           {stats.map((stat, index) => (
-            <div
-              key={stat?.label}
-              className="glass-card p-10 rounded-3xl group relative flex flex-col items-center justify-center min-h-[160px] hover:bg-white/20 transition-all duration-300"
-            >
-              <div className="w-full relative h-12 overflow-hidden flex items-center justify-center">
-                {/* Logo that slides up on hover */}
-                <div className="absolute inset-0 flex items-center justify-center group-hover:-translate-y-16 group-hover:opacity-0 transition-all duration-500 ease-in-out">
-                  <span className="text-xl font-black tracking-tighter text-white/40 uppercase">
-                    {stat.logo}
-                  </span>
-                </div>
-                
-                {/* Stat that slides in from bottom on hover */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center translate-y-16 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-in-out">
-                  <div className="flex items-center gap-1.5">
-                    {stat.isIncrease ? (
-                      <ArrowUp className="w-5 h-5 text-green-400" />
-                    ) : (
-                      <ArrowDown className="w-5 h-5 text-red-400" />
-                    )}
-                    <span className="text-3xl font-black tracking-tighter text-white">
-                      {stat.percentage}
-                    </span>
-                  </div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mt-1 text-center">
-                    {stat.label}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <StatCard key={stat.label} stat={stat} />
           ))}
         </motion.div>
+
+        {/* Interaction Hint */}
+        <motion.p
+          className="mt-8 text-center text-gray-500 text-xs font-medium tracking-widest uppercase"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        >
+          <span className="md:hidden">Click on these cards</span>
+          <span className="hidden md:inline">Hover on these cards</span>
+          {" "}to see performance
+        </motion.p>
       </div>
+    </div>
+  );
+}
+
+function StatCard({ stat }: { stat: { logo: string; percentage: string; label: string; isIncrease: boolean } }) {
+  const [isTapped, setIsTapped] = useState(false);
+
+  return (
+    <div
+      onClick={() => setIsTapped(!isTapped)}
+      className="glass-card p-6 sm:p-10 rounded-2xl sm:rounded-3xl group relative flex flex-col items-center justify-center min-h-[120px] sm:min-h-[160px] hover:bg-white/20 transition-all duration-300 cursor-pointer touch-manipulation"
+    >
+      <div className="w-full relative h-12 overflow-hidden flex items-center justify-center">
+        {/* Logo that slides up on hover or tap */}
+        <div 
+          className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ease-in-out 
+            ${isTapped ? "-translate-y-16 opacity-0" : "group-hover:-translate-y-16 group-hover:opacity-0"}`}
+        >
+          <span className="text-xl font-black tracking-tighter text-white/40 uppercase">
+            {stat.logo}
+          </span>
+        </div>
+        
+        {/* Stat that slides in from bottom on hover or tap */}
+        <div 
+          className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-500 ease-in-out 
+            ${isTapped ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0 group-hover:translate-y-0 group-hover:opacity-100"}`}
+        >
+          <div className="flex items-center gap-1.5">
+            {stat.isIncrease ? (
+              <ArrowUp className="w-5 h-5 text-green-400" />
+            ) : (
+              <ArrowDown className="w-5 h-5 text-red-400" />
+            )}
+            <span className="text-2xl sm:text-3xl font-black tracking-tighter text-white">
+              {stat.percentage}
+            </span>
+          </div>
+          <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mt-1 text-center leading-none">
+            {stat.label}
+          </p>
+        </div>
+      </div>
+      
+      {/* Mobile Indicator */}
+      <div className={`absolute bottom-2 right-2 w-1 h-1 rounded-full bg-white/20 md:hidden transition-opacity ${isTapped ? 'opacity-0' : 'opacity-100'}`} />
     </div>
   );
 }

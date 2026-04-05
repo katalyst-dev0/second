@@ -110,12 +110,25 @@ export function TestimonialsScrolling() {
           </motion.p>
         </div>
 
-        {/* Scrolling Columns */}
-        <div className="flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden opacity-0 animate-fade-in-up"
-             style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
-          <TestimonialsColumn testimonials={firstColumn} duration={15} />
-          <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} />
-          <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} />
+        {/* Scrolling Columns Container */}
+        <div 
+          className="relative w-full opacity-0 animate-fade-in-up"
+          style={{ 
+            animationDelay: "0.4s", 
+            animationFillMode: "forwards",
+          }}
+        >
+          {/* Top Fade Overlay */}
+          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent z-20 pointer-events-none" />
+          
+          <div className="flex justify-center gap-6 py-4 overflow-hidden h-[700px]">
+            <TestimonialsColumn testimonials={firstColumn} duration={15} />
+            <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} />
+            <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} />
+          </div>
+
+          {/* Bottom Fade Overlay */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none" />
         </div>
       </div>
       
