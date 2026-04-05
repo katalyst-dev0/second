@@ -19,8 +19,8 @@ const scrollOptions = {
   lerp: 0.15,
   multiplier: 1.4,
   class: "is-revealed",
-  smartphone: { smooth: false },
-  tablet: { smooth: false },
+  smartphone: { smooth: false, breakpoint: 768 },
+  tablet: { smooth: false, breakpoint: 1024 },
 };
 
 const App = () => {
