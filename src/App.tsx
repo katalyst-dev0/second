@@ -10,14 +10,15 @@ import { TestimonialsScrolling } from "@/components/testimonials-scrolling";
 import { GradientBackground } from "@/components/ui/paper-design-shader-background";
 import { WebGLShader } from "@/components/ui/web-gl-shader";
 import { KatalystLogo } from "@/components/ui/katalyst-logo";
+import { Footer } from "@/components/ui/footer-section";
 
 const scrollOptions = {
   smooth: true,
   lerp: 0.15,
   multiplier: 1.4,
   class: "is-revealed",
-  smartphone: { smooth: true },
-  tablet: { smooth: true },
+  smartphone: { smooth: true, breakpoint: 768 },
+  tablet: { smooth: true, breakpoint: 1024 },
 };
 
 const App = () => {
@@ -63,135 +64,140 @@ const App = () => {
         data-scroll-container
         className="min-h-screen bg-transparent font-sans text-white relative z-10"
       >
-        {/* Navigation */}
-        <nav className="px-6 py-4 flex items-center justify-between max-w-7xl mx-auto">
-          <div className="flex items-center gap-3 flex-shrink-0">
-            <button 
-              onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
-              className="cursor-pointer bg-transparent border-none p-0"
-            >
-              <KatalystLogo width={180} height={48} />
-            </button>
-          </div>
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#process" className="text-sm text-gray-300 hover:text-white transition-colors">Our Process</a>
-            <a href="#reach" className="text-sm text-gray-300 hover:text-white transition-colors">Global Reach</a>
-            <a href="#community" className="text-sm text-gray-300 hover:text-white transition-colors">Community</a>
-            <a href="#feedback" className="text-sm text-gray-300 hover:text-white transition-colors">Feedback</a>
-          </div>
-          <div className="flex items-center gap-6">
-            <a
-              href="https://calendly.com/kompanykatalyst/discovery-call"
-              target="_blank"
-              rel="noreferrer"
-              className="bg-white/10 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-white/20 transition-colors shadow-sm border border-white/10"
-            >
-              Book an Appointment
-            </a>
-          </div>
-        </nav>
+        <section data-scroll-section>
+          {/* Navigation */}
+          <nav className="px-6 py-4 flex items-center justify-between max-w-7xl mx-auto">
+            <div className="flex items-center gap-3 flex-shrink-0">
+              <button 
+                onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
+                className="cursor-pointer bg-transparent border-none p-0"
+              >
+                <KatalystLogo width={180} height={48} />
+              </button>
+            </div>
+            <div className="hidden md:flex items-center gap-8">
+              <a href="#process" className="text-sm text-gray-300 hover:text-white transition-colors">Our Process</a>
+              <a href="#reach" className="text-sm text-gray-300 hover:text-white transition-colors">Global Reach</a>
+              <a href="#community" className="text-sm text-gray-300 hover:text-white transition-colors">Community</a>
+              <a href="#feedback" className="text-sm text-gray-300 hover:text-white transition-colors">Feedback</a>
+            </div>
+            <div className="flex items-center gap-6">
+              <a
+                href="https://calendly.com/kompanykatalyst/discovery-call"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-white/10 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-white/20 transition-colors shadow-sm border border-white/10"
+              >
+                Book an Appointment
+              </a>
+            </div>
+          </nav>
 
-      {/* Hero Section */}
-      <header
-        className={`px-6 pt-24 pb-32 max-w-7xl mx-auto text-center relative overflow-hidden ${
-          heroVisible ? "animate-fade-in-up" : "opacity-0"
-        }`}
-      >
-        {/* Reviews Badge */}
-      <div className="inline-flex items-center gap-2 mb-8">
-          <div className="w-6 h-6 border border-white/20 rounded flex items-center justify-center">
-            <Star className="w-3.5 h-3.5 text-white fill-white" />
-          </div>
-          <span className="text-sm font-medium text-white">
-            4.9 rating from 18.3K+ users
-          </span>
-        </div>
-
-        {/* Heading */}
-        <h1
-          className="text-6xl md:text-7xl lg:text-[80px] font-normal leading-[1.1] tracking-tight mb-5"
-        >
-          Katalyst Marketing
-          <br />
-          <span className="bg-gradient-to-r from-white via-gray-400 to-gray-500 bg-clip-text text-transparent italic">
-            Performance that scales
-          </span>
-        </h1>
-
-        {/* Subheading */}
-        <p
-        className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed"
-        >
-          From high-performance ad campaigns to data-driven growth strategies, we build systems that produce measurable results and predictable ROI.
-        </p>
-
-        {/* CTA */}
-        <div
-        className="mb-12"
-        >
-          <a
-            href="https://calendly.com/kompanykatalyst/discovery-call"
-            target="_blank"
-            rel="noreferrer"
-            className="bg-white/10 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-white/20 transition-colors shadow-lg shadow-white/5 border border-white/10 inline-flex items-center justify-center"
+          {/* Hero Section */}
+          <header
+            className={`px-6 pt-24 pb-32 max-w-7xl mx-auto text-center relative overflow-hidden ${
+              heroVisible ? "animate-fade-in-up" : "opacity-0"
+            }`}
           >
-            Schedule a growth consult
-          </a>
-        </div>
+            {/* Reviews Badge */}
+          <div className="inline-flex items-center gap-2 mb-8">
+              <div className="w-6 h-6 border border-white/20 rounded flex items-center justify-center">
+                <Star className="w-3.5 h-3.5 text-white fill-white" />
+              </div>
+              <span className="text-sm font-medium text-white">
+                4.9 rating from 18.3K+ users
+              </span>
+            </div>
 
-        {/* Video Section */}
-        <div className="relative mx-auto w-[92vw] max-w-5xl rounded-3xl overflow-hidden h-[320px] md:h-[420px] glass-card shadow-2xl">
-          <WebGLShader />
-        </div>
+            {/* Heading */}
+            <h1
+              className="text-6xl md:text-7xl lg:text-[80px] font-normal leading-[1.1] tracking-tight mb-5"
+            >
+              Katalyst Marketing
+              <br />
+              <span className="bg-gradient-to-r from-white via-gray-400 to-gray-500 bg-clip-text text-transparent italic">
+                Performance that scales
+              </span>
+            </h1>
 
-        {/* Digital Marketing Services Cloud */}
-        <div className="mt-24 pb-12 flex justify-center">
-          <div className="logo-cloud glass-card flex flex-wrap items-center justify-center gap-x-12 gap-y-8 opacity-90">
-            <span className="text-xl font-bold tracking-tighter text-white">
-              META ADS
-            </span>
-            <span className="text-xl font-bold flex items-center gap-1 text-white">
-              <div className="w-5 h-5 bg-white rounded-full" /> GOOGLE ADS
-            </span>
-            <span className="text-lg font-medium flex items-center gap-2 text-white">
-              <div className="grid grid-cols-2 gap-0.5">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-1 h-1 bg-white rounded-full" />
-                ))}
+            {/* Subheading */}
+            <p
+            className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed"
+            >
+              From high-performance ad campaigns to data-driven growth strategies, we build systems that produce measurable results and predictable ROI.
+            </p>
+
+            {/* CTA */}
+            <div
+            className="mb-12"
+            >
+              <a
+                href="https://calendly.com/kompanykatalyst/discovery-call"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-white/10 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-white/20 transition-colors shadow-lg shadow-white/5 border border-white/10 inline-flex items-center justify-center"
+              >
+                Schedule a growth consult
+              </a>
+            </div>
+
+            {/* Video Section */}
+            <div className="relative mx-auto w-[92vw] max-w-5xl rounded-3xl overflow-hidden h-[320px] md:h-[420px] glass-card shadow-2xl">
+              <WebGLShader />
+            </div>
+
+            {/* Digital Marketing Services Cloud */}
+            <div className="mt-24 pb-12 flex justify-center">
+              <div className="logo-cloud glass-card flex flex-wrap items-center justify-center gap-x-12 gap-y-8 opacity-90">
+                <span className="text-xl font-bold tracking-tighter text-white">
+                  META ADS
+                </span>
+                <span className="text-xl font-bold flex items-center gap-1 text-white">
+                  <div className="w-5 h-5 bg-white rounded-full" /> GOOGLE ADS
+                </span>
+                <span className="text-lg font-medium flex items-center gap-2 text-white">
+                  <div className="grid grid-cols-2 gap-0.5">
+                    {[1, 2, 3, 4].map((i) => (
+                      <div key={i} className="w-1 h-1 bg-white rounded-full" />
+                    ))}
+                  </div>
+                  SEO STRATEGY
+                </span>
+                <span className="text-2xl font-serif italic font-bold text-white">
+                  EMAIL
+                </span>
+                <span className="text-lg font-bold flex items-center gap-2 text-white">
+                  <div className="w-7 h-7 border-2 border-white rounded-full flex items-center justify-center text-[10px]">
+                    AN
+                  </div>
+                  ANALYTICS
+                </span>
+                <span className="text-lg font-semibold flex items-center gap-1.5 text-white">
+                  <div className="flex gap-0.5">
+                    {[1, 2, 3].map((i) => (
+                      <div key={i} className="w-1 h-1 bg-white rounded-full" />
+                    ))}
+                  </div>
+                  CONTENT
+                </span>
               </div>
-              SEO STRATEGY
-            </span>
-            <span className="text-2xl font-serif italic font-bold text-white">
-              EMAIL
-            </span>
-            <span className="text-lg font-bold flex items-center gap-2 text-white">
-              <div className="w-7 h-7 border-2 border-white rounded-full flex items-center justify-center text-[10px]">
-                AN
-              </div>
-              ANALYTICS
-            </span>
-            <span className="text-lg font-semibold flex items-center gap-1.5 text-white">
-              <div className="flex gap-0.5">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="w-1 h-1 bg-white rounded-full" />
-                ))}
-              </div>
-              CONTENT
-            </span>
-          </div>
-        </div>
-      </header>
-      <section>
+            </div>
+          </header>
+        </section>
+      <section data-scroll-section>
         <AboutUsSection />
       </section>
-      <section>
+      <section data-scroll-section>
         <WorldMapDemo />
       </section>
-      <section>
+      <section data-scroll-section>
         <Testimonial1 />
       </section>
-      <section>
+      <section data-scroll-section>
         <TestimonialsScrolling />
+      </section>
+      <section data-scroll-section>
+        <Footer />
       </section>
       </div>
     </>

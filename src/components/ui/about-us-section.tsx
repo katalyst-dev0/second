@@ -15,7 +15,7 @@ import {
   Star,
   ArrowRight,
 } from "lucide-react"
-import { motion, useScroll, useTransform, useInView } from "framer-motion"
+import { motion, useScroll, useTransform, useInView, type Variants } from "framer-motion"
 
 const services = [
   {
@@ -75,7 +75,7 @@ const stats = [
   { icon: <TrendingUp className="w-6 h-6" />, value: 98, label: "ROI Target Success", suffix: "%" },
 ]
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -86,12 +86,12 @@ const containerVariants = {
   },
 }
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { y: 20, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
   },
 }
 
@@ -109,12 +109,12 @@ export default function AboutUsSection() {
 
   const isInView = useInView(sectionRef, { once: false, amount: 0.25 })
   const isStatsInView = useInView(statsRef, { once: false, amount: 0.2 })
-  const fadeVariants = {
+  const fadeVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
     },
   }
 
@@ -203,7 +203,7 @@ export default function AboutUsSection() {
                 whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1747582411588-f9b4acabe995?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.1.0"
+                  src="/im.png"
                   alt="Digital Performance"
                   className="w-full h-full object-cover"
                 />
