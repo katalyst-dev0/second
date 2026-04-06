@@ -1,6 +1,6 @@
 import React from "react";
-import KatalystCore from "@/components/KatalystCore";
+import KatalystAutomationCore from "@/components/automation/KatalystAutomationCore";
 
-const KatalystAutomationPage = () => <KatalystCore />;
+const KatalystAutomationPage = () => <KatalystAutomationCore />;
 
 export default KatalystAutomationPage;
