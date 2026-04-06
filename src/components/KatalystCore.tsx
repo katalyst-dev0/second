@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { Star, Menu, X } from "lucide-react";
 import type LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
@@ -189,6 +190,12 @@ const KatalystCore = () => {
             </div>
 
             <div className="hidden md:flex items-center gap-8">
+              <Link
+                to="/"
+                className="text-sm text-gray-300 hover:text-white transition-colors font-medium"
+              >
+                Home
+              </Link>
               <a
                 href="#process"
                 onClick={(e) => scrollToSection(e, "#process")}
