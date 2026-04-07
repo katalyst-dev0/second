@@ -94,9 +94,10 @@ export function WebGLShader() {
     refs.scene.add(refs.mesh)
 
     const handleResize = () => {
-      if (!refs.renderer || !refs.uniforms) return
-      const width = window.innerWidth
-      const height = window.innerHeight
+      if (!refs.renderer || !refs.uniforms || !canvas.parentElement) return
+      const rect = canvas.parentElement.getBoundingClientRect()
+      const width = rect.width
+      const height = rect.height
       refs.renderer.setSize(width, height, false)
       refs.uniforms.resolution.value = [width, height]
     }
@@ -112,12 +113,21 @@ export function WebGLShader() {
     }
 
     handleResize()
-    window.addEventListener("resize", handleResize)
+    
+    // Use ResizeObserver for more reliable parent resizing
+    const resizeObserver = new ResizeObserver(() => {
+      handleResize()
+    })
+    
+    if (canvas.parentElement) {
+      resizeObserver.observe(canvas.parentElement)
+    }
+
     animate()
 
     return () => {
       if (refs.animationId) cancelAnimationFrame(refs.animationId)
-      window.removeEventListener("resize", handleResize)
+      resizeObserver.disconnect()
       if (refs.mesh) {
         refs.scene?.remove(refs.mesh)
         refs.mesh.geometry.dispose()
