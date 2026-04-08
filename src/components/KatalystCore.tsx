@@ -1,13 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import { Star } from "lucide-react";
 import type LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 
 import AboutUsSection from "@/components/ui/about-us-section";
-import WorldMapDemo from "@/components/world-map-demo";
-import Testimonial1 from "@/components/ui/testimonial-1";
-import { TestimonialsScrolling } from "@/components/testimonials-scrolling";
 import { GradientBackground } from "@/components/ui/paper-design-shader-background";
 import { WebGLShader } from "@/components/ui/web-gl-shader";
 import { KatalystLogo } from "@/components/ui/katalyst-logo";
@@ -15,6 +11,7 @@ import { Footer } from "@/components/ui/footer-section";
 import { Navbar } from "@/components/ui/navbar";
 
 const DESKTOP_BREAKPOINT = 1024;
+const SECTION_WIDTH_CLASS = "mx-auto w-[80vw] max-w-[1600px]";
 
 const scrollOptions = {
   smooth: true,
@@ -98,18 +95,20 @@ const KatalystCore = () => {
   return (
     <>
       <GradientBackground />
+      <Navbar 
+        scrollToSection={scrollToSection} 
+        locoScroll={locoScrollRef.current} 
+      />
 
       <div
         ref={scrollContainerRef}
         {...(useLoco ? { "data-scroll-container": true } : {})}
         className="min-h-screen bg-transparent font-sans text-white relative z-10"
       >
-        <section {...(useLoco ? { "data-scroll-section": true } : {})}>
-          <Navbar 
-            scrollToSection={scrollToSection} 
-            locoScroll={locoScrollRef.current} 
-          />
-
+        <section
+          className={SECTION_WIDTH_CLASS}
+          {...(useLoco ? { "data-scroll-section": true } : {})}
+        >
           <header
             className={`px-6 pt-16 md:pt-24 pb-20 md:pb-32 max-w-7xl mx-auto text-center relative overflow-hidden ${
               heroVisible ? "animate-fade-in-up" : "opacity-0"
@@ -228,19 +227,16 @@ const KatalystCore = () => {
             </div>
           </header>
         </section>
-        <section {...(useLoco ? { "data-scroll-section": true } : {})}>
+        <section
+          className={SECTION_WIDTH_CLASS}
+          {...(useLoco ? { "data-scroll-section": true } : {})}
+        >
           <AboutUsSection />
         </section>
-        <section {...(useLoco ? { "data-scroll-section": true } : {})}>
-          <WorldMapDemo />
-        </section>
-        <section {...(useLoco ? { "data-scroll-section": true } : {})}>
-          <Testimonial1 />
-        </section>
-        <section {...(useLoco ? { "data-scroll-section": true } : {})}>
-          <TestimonialsScrolling />
-        </section>
-        <section {...(useLoco ? { "data-scroll-section": true } : {})}>
+        <section
+          className={SECTION_WIDTH_CLASS}
+          {...(useLoco ? { "data-scroll-section": true } : {})}
+        >
           <Footer />
         </section>
       </div>

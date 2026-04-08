@@ -98,6 +98,10 @@ const KatalystAutomationCore = () => {
   return (
     <>
       <GradientBackground />
+      <Navbar 
+        scrollToSection={scrollToSection} 
+        locoScroll={locoScrollRef.current} 
+      />
 
       <div
         ref={scrollContainerRef}
@@ -105,11 +109,6 @@ const KatalystAutomationCore = () => {
         className="min-h-screen bg-transparent font-sans text-white relative z-10"
       >
         <section {...(useLoco ? { "data-scroll-section": true } : {})}>
-          <Navbar 
-            scrollToSection={scrollToSection} 
-            locoScroll={locoScrollRef.current} 
-          />
-
           <header
             className={`px-6 pt-16 md:pt-24 pb-20 md:pb-32 max-w-7xl mx-auto text-center relative overflow-hidden ${
               heroVisible ? "animate-fade-in-up" : "opacity-0"

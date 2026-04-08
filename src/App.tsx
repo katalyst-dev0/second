@@ -8,9 +8,6 @@ import { Footer } from "@/components/ui/footer-section";
 import { HomeHero } from "@/components/home-hero";
 import { CoreServices } from "@/components/core-services";
 import { GrowthSupport } from "@/components/growth-support";
-import WorldMapDemo from "@/components/world-map-demo";
-import Testimonial1 from "@/components/ui/testimonial-1";
-import { TestimonialsScrolling } from "@/components/testimonials-scrolling";
 
 const LandingPage = () => {
   const handleScrollToSection = useCallback(
@@ -21,33 +18,29 @@ const LandingPage = () => {
         target.scrollIntoView({ behavior: "smooth" });
       }
     },
-    []
+    [],
   );
 
   return (
     <div className="min-h-screen bg-transparent text-white relative font-sans flex flex-col">
       <GradientBackground />
-      
+
       <Navbar scrollToSection={handleScrollToSection} />
 
-      <main className="flex-1 w-full overflow-x-hidden">
-        {/* 2. Hero Section */}
-        <HomeHero />
+      <main className="flex-1 w-full overflow-x-hidden flex justify-center">
+        <div className="w-[80vw] max-w-[1600px] flex flex-col gap-16 py-12">
+          {/* 2. Hero Section */}
+          <HomeHero />
 
-        {/* 3. Our Core services */}
-        <CoreServices />
+          {/* 3. Our Core services */}
+          <CoreServices />
 
-        {/* 5. Helping small Businesses grow & 6. Book a free consultation */}
-        <GrowthSupport />
+          {/* 5. Helping small Businesses grow & 6. Book a free consultation */}
+          <GrowthSupport />
 
-        {/* 7. Global reach, community, and testimonials */}
-        <WorldMapDemo />
-        <Testimonial1 />
-        <TestimonialsScrolling />
+          <Footer />
+        </div>
       </main>
-
-      {/* 7. Footer */}
-      <Footer />
     </div>
   );
 };

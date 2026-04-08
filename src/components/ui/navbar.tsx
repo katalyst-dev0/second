@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { KatalystLogo } from "@/components/ui/katalyst-logo";
 
@@ -11,6 +11,7 @@ interface NavbarProps {
 export const Navbar = ({ scrollToSection, locoScroll }: NavbarProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === "/";
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -38,10 +39,14 @@ export const Navbar = ({ scrollToSection, locoScroll }: NavbarProps) => {
   };
 
   const handleLogoClick = () => {
-    if (locoScroll) {
-      locoScroll.scrollTo(0, { duration: 1.5 });
+    if (!isHomePage) {
+      navigate("/");
     } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (locoScroll) {
+        locoScroll.scrollTo(0, { duration: 1.5 });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     }
     closeMobileMenu();
   };
@@ -108,74 +113,72 @@ export const Navbar = ({ scrollToSection, locoScroll }: NavbarProps) => {
         </div>
       )}
 
-      <nav className="px-6 py-4 flex items-center justify-between max-w-7xl mx-auto relative z-50">
-        <div className="flex items-center gap-3 flex-shrink-0">
+      <nav className="sticky top-0 w-full px-6 py-4 flex items-center justify-center z-[100] bg-transparent backdrop-blur-[2px] transition-all duration-300">
+        <div className="md:hidden w-full flex items-center justify-between">
           <button
             onClick={handleLogoClick}
-            className="cursor-pointer bg-transparent border-none p-0"
+            className="cursor-pointer bg-transparent border-none p-0 transition-opacity hover:opacity-90"
           >
-            <div className="hidden sm:block">
-              <KatalystLogo width={200} height={43} />
-            </div>
-            <div className="sm:hidden">
-              <KatalystLogo width={140} height={30} />
-            </div>
+            <KatalystLogo width={130} height={28} />
+          </button>
+          <button
+            onClick={toggleMobileMenu}
+            className="p-2 text-white hover:bg-white/10 rounded-lg transition-colors border border-white/10"
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
-        <div className="hidden md:flex items-center gap-8">
-          {!isHomePage && (
-            <Link
-              to="/"
-              className="text-sm text-gray-300 hover:text-white transition-colors font-medium"
+        <div className="hidden md:flex items-center bg-black/40 backdrop-blur-2xl border border-white/10 rounded-full pl-6 pr-2 py-1.5 gap-8 shadow-2xl">
+          <button
+            onClick={handleLogoClick}
+            className="cursor-pointer bg-transparent border-none p-0 transition-opacity hover:opacity-90 pr-4 border-r border-white/10"
+          >
+            <KatalystLogo width={140} height={30} />
+          </button>
+
+          <div className="flex items-center gap-8 lg:gap-10">
+            {!isHomePage && (
+              <Link
+                to="/"
+                className="text-sm text-gray-300 hover:text-white transition-colors font-medium tracking-wide"
+              >
+                Home
+              </Link>
+            )}
+            <a
+              href="#reach"
+              onClick={(e) => handleScrollToSection(e, "#reach")}
+              className="text-sm text-gray-400 hover:text-white transition-colors font-medium tracking-wide whitespace-nowrap"
             >
-              Home
-            </Link>
-          )}
-          <a
-            href="#reach"
-            onClick={(e) => handleScrollToSection(e, "#reach")}
-            className="text-sm text-gray-300 hover:text-white transition-colors"
-          >
-            Global Reach
-          </a>
+              Global Reach
+            </a>
 
-          <a
-            href="#community"
-            onClick={(e) => handleScrollToSection(e, "#community")}
-            className="text-sm text-gray-300 hover:text-white transition-colors"
-          >
-            Community
-          </a>
-          <a
-            href="#feedback"
-            onClick={(e) => handleScrollToSection(e, "#feedback")}
-            className="text-sm text-gray-300 hover:text-white transition-colors"
-          >
-            Feedback
-          </a>
-        </div>
+            <a
+              href="#community"
+              onClick={(e) => handleScrollToSection(e, "#community")}
+              className="text-sm text-gray-400 hover:text-white transition-colors font-medium tracking-wide"
+            >
+              Community
+            </a>
+            <a
+              href="#feedback"
+              onClick={(e) => handleScrollToSection(e, "#feedback")}
+              className="text-sm text-gray-400 hover:text-white transition-colors font-medium tracking-wide"
+            >
+              Feedback
+            </a>
+          </div>
 
-        <div className="flex items-center gap-4">
           <a
             href="https://calendly.com/kompanykatalyst/discovery-call"
             target="_blank"
             rel="noreferrer"
-            className="hidden sm:inline-flex bg-white/10 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-white/20 transition-colors shadow-sm border border-white/10 whitespace-nowrap"
+            className="bg-white text-black px-6 py-2.5 rounded-full text-sm font-bold hover:bg-gray-200 transition-all shadow-lg whitespace-nowrap active:scale-95"
           >
             Book an Appointment
           </a>
-          <button
-            onClick={toggleMobileMenu}
-            className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
-            aria-label="Toggle mobile menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
         </div>
       </nav>
     </>
