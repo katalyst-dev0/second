@@ -71,7 +71,8 @@ export const Navbar = ({ scrollToSection, locoScroll }: NavbarProps) => {
               <Link
                 to="/"
                 onClick={closeMobileMenu}
-                className="text-4xl font-light tracking-tighter text-white/70 hover:text-white transition-colors"
+                className="text-4xl font-light tracking-tighter transition-colors"
+                style={{color: 'var(--text-secondary)'}}
               >
                 Home
               </Link>
@@ -79,21 +80,24 @@ export const Navbar = ({ scrollToSection, locoScroll }: NavbarProps) => {
             <a
               href="#reach"
               onClick={(e) => handleScrollToSection(e, "#reach")}
-              className="text-4xl font-light tracking-tighter text-white/70 hover:text-white transition-colors"
+              className="text-4xl font-light tracking-tighter transition-colors"
+              style={{color: 'var(--text-secondary)'}}
             >
               Global Reach
             </a>
             <a
               href="#community"
               onClick={(e) => handleScrollToSection(e, "#community")}
-              className="text-4xl font-light tracking-tighter text-white/70 hover:text-white transition-colors"
+              className="text-4xl font-light tracking-tighter transition-colors"
+              style={{color: 'var(--text-secondary)'}}
             >
               Community
             </a>
             <a
               href="#feedback"
               onClick={(e) => handleScrollToSection(e, "#feedback")}
-              className="text-4xl font-light tracking-tighter text-white/70 hover:text-white transition-colors"
+              className="text-4xl font-light tracking-tighter transition-colors"
+              style={{color: 'var(--text-secondary)'}}
             >
               Feedback
             </a>
@@ -105,7 +109,8 @@ export const Navbar = ({ scrollToSection, locoScroll }: NavbarProps) => {
               target="_blank"
               rel="noreferrer"
               onClick={closeMobileMenu}
-              className="bg-white text-black px-10 py-4 rounded-full text-lg font-bold shadow-xl text-center active:scale-95 transition-transform w-full max-w-[280px]"
+              className="bg-white text-black px-10 py-4 text-lg font-bold shadow-xl text-center active:scale-95 transition-transform w-full max-w-[280px]"
+              style={{borderRadius: '980px'}}
             >
               Schedule a consult
             </a>
@@ -113,7 +118,7 @@ export const Navbar = ({ scrollToSection, locoScroll }: NavbarProps) => {
         </div>
       )}
 
-      <nav className="sticky top-0 w-full px-6 py-4 flex items-center justify-center z-[100] bg-transparent backdrop-blur-[2px] transition-all duration-300">
+      <nav className="sticky top-0 w-full px-6 py-4 flex items-center justify-center z-[100] transition-all duration-700" style={{background: 'var(--nav-bg)', backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)'}}>
         <div className="md:hidden w-full flex items-center justify-between">
           <button
             onClick={handleLogoClick}
@@ -130,7 +135,7 @@ export const Navbar = ({ scrollToSection, locoScroll }: NavbarProps) => {
           </button>
         </div>
 
-        <div className="hidden md:flex items-center bg-black/40 backdrop-blur-2xl border border-white/10 rounded-full pl-6 pr-2 py-1.5 gap-8 shadow-2xl">
+        <div className="hidden md:flex items-center border border-white/10 rounded-full pl-6 pr-2 py-1.5 gap-8 shadow-2xl" style={{background: 'var(--nav-bg)', backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)'}}>
           <button
             onClick={handleLogoClick}
             className="cursor-pointer bg-transparent border-none p-0 transition-opacity hover:opacity-90 pr-4 border-r border-white/10"
@@ -150,7 +155,8 @@ export const Navbar = ({ scrollToSection, locoScroll }: NavbarProps) => {
             <a
               href="#reach"
               onClick={(e) => handleScrollToSection(e, "#reach")}
-              className="text-sm text-gray-400 hover:text-white transition-colors font-medium tracking-wide whitespace-nowrap"
+              className="text-sm transition-colors font-medium tracking-wide whitespace-nowrap"
+              style={{color: 'var(--text-secondary)'}}
             >
               Global Reach
             </a>
@@ -158,14 +164,16 @@ export const Navbar = ({ scrollToSection, locoScroll }: NavbarProps) => {
             <a
               href="#community"
               onClick={(e) => handleScrollToSection(e, "#community")}
-              className="text-sm text-gray-400 hover:text-white transition-colors font-medium tracking-wide"
+              className="text-sm transition-colors font-medium tracking-wide"
+              style={{color: 'var(--text-secondary)'}}
             >
               Community
             </a>
             <a
               href="#feedback"
               onClick={(e) => handleScrollToSection(e, "#feedback")}
-              className="text-sm text-gray-400 hover:text-white transition-colors font-medium tracking-wide"
+              className="text-sm transition-colors font-medium tracking-wide"
+              style={{color: 'var(--text-secondary)'}}
             >
               Feedback
             </a>
@@ -175,7 +183,8 @@ export const Navbar = ({ scrollToSection, locoScroll }: NavbarProps) => {
             href="https://calendly.com/kompanykatalyst/discovery-call"
             target="_blank"
             rel="noreferrer"
-            className="bg-white text-black px-6 py-2.5 rounded-full text-sm font-bold hover:bg-gray-200 transition-all shadow-lg whitespace-nowrap active:scale-95"
+            className="bg-white text-black px-6 py-2.5 text-sm font-bold transition-all shadow-lg whitespace-nowrap active:scale-95"
+            style={{borderRadius: '980px'}}
           >
             Book an Appointment
           </a>

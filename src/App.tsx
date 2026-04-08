@@ -27,18 +27,29 @@ const LandingPage = () => {
 
       <Navbar scrollToSection={handleScrollToSection} />
 
-      <main className="flex-1 w-full overflow-x-hidden flex justify-center">
-        <div className="w-[80vw] max-w-[1600px] flex flex-col gap-16 py-12">
-          {/* 2. Hero Section */}
-          <HomeHero />
+      <main className="flex-1 w-full overflow-x-hidden">
+        <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="flex flex-col gap-20 lg:gap-24 py-16 lg:py-20">
+            {/* 2. Hero Section */}
+            <section className="-mt-32">
+              <HomeHero />
+            </section>
 
-          {/* 3. Our Core services */}
-          <CoreServices />
+            {/* 3. Our Core services */}
+            <section>
+              <CoreServices />
+            </section>
 
-          {/* 5. Helping small Businesses grow & 6. Book a free consultation */}
-          <GrowthSupport />
+            {/* 5. Helping small Businesses grow & 6. Book a free consultation */}
+            <section>
+              <GrowthSupport />
+            </section>
 
-          <Footer />
+            {/* Footer */}
+            <section className="pt-16">
+              <Footer />
+            </section>
+          </div>
         </div>
       </main>
     </div>
