@@ -1,0 +1,19 @@
+{
+  "totalFiles": 31,
+  "totalSymbols": 55,
+  "directories": {
+    "src": 5,
+    "src/lib": 1,
+    "src/components": 19,
+    "src/components/ui": 19,
+    "src/components/automation": 11
+  },
+  "topSymbols": [
+    "e",
+    "cancelAnimationFrame",
+    "frame",
+    "i",
+    "TestimonialsScrolling"
+  ],
+  "languages": {}
+}

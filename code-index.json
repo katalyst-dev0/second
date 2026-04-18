@@ -1,0 +1,1072 @@
+[
+  {
+    "name": "handleScrollToSection",
+    "filePath": "src/App.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 711,
+    "endByte": 3144,
+    "startLine": 12,
+    "endLine": 103,
+    "startColumn": 20,
+    "endColumn": 1,
+    "signature": "() => {",
+    "calls": [
+      "src_app_tsx_uselocation",
+      "src_app_tsx_cleartimeout"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 5,
+      "maxNestingDepth": 5
+    }
+  },
+  {
+    "name": "e",
+    "filePath": "src/App.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 768,
+    "endByte": 1011,
+    "startLine": 14,
+    "endLine": 20,
+    "startColumn": 4,
+    "endColumn": 5,
+    "signature": "(e: React.MouseEvent<HTMLAnchorElement>, id: string) => {",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 3,
+      "maxNestingDepth": 3
+    }
+  },
+  {
+    "name": "useLocation",
+    "filePath": "src/App.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 2030,
+    "endByte": 2745,
+    "startLine": 59,
+    "endLine": 88,
+    "startColumn": 20,
+    "endColumn": 1,
+    "signature": "() => {",
+    "calls": [
+      "src_app_tsx_cleartimeout"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 3,
+      "maxNestingDepth": 4
+    }
+  },
+  {
+    "name": "window",
+    "filePath": "src/App.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 2089,
+    "endByte": 2713,
+    "startLine": 62,
+    "endLine": 85,
+    "startColumn": 12,
+    "endColumn": 3,
+    "signature": "() => {",
+    "calls": [
+      "src_app_tsx_cleartimeout"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 3,
+      "maxNestingDepth": 3
+    }
+  },
+  {
+    "name": "clearTimeout",
+    "filePath": "src/App.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 2623,
+    "endByte": 2708,
+    "startLine": 80,
+    "endLine": 84,
+    "startColumn": 11,
+    "endColumn": 5,
+    "signature": "() => {",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 1
+    }
+  },
+  {
+    "name": "cn",
+    "filePath": "src/lib/utils.ts",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 54,
+    "endByte": 117,
+    "startLine": 2,
+    "endLine": 4,
+    "startColumn": 7,
+    "endColumn": 1,
+    "signature": "function cn(...inputs: ClassValue[]) {",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 1
+    }
+  },
+  {
+    "name": "video",
+    "filePath": "src/components/SocialProofSection.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 221,
+    "endByte": 1215,
+    "startLine": 7,
+    "endLine": 46,
+    "startColumn": 12,
+    "endColumn": 3,
+    "signature": "() => {",
+    "calls": [
+      "src_components_socialproofsection_tsx_cancelanimationframe",
+      "src_components_home_hero_tsx_cancelanimationframe",
+      "src_components_katalystcore_tsx_cancelanimationframe",
+      "src_components_automation_katalystautomationcore_tsx_cancelanimationframe"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 12,
+      "maxNestingDepth": 5
+    }
+  },
+  {
+    "name": "duration",
+    "filePath": "src/components/SocialProofSection.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 334,
+    "endByte": 813,
+    "startLine": 13,
+    "endLine": 27,
+    "startColumn": 20,
+    "endColumn": 5,
+    "signature": "() => {",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 10,
+      "maxNestingDepth": 4
+    }
+  },
+  {
+    "name": "cancelAnimationFrame",
+    "filePath": "src/components/SocialProofSection.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 1107,
+    "endByte": 1210,
+    "startLine": 42,
+    "endLine": 45,
+    "startColumn": 11,
+    "endColumn": 5,
+    "signature": "() => {",
+    "calls": [
+      "src_components_home_hero_tsx_cancelanimationframe",
+      "src_components_katalystcore_tsx_cancelanimationframe",
+      "src_components_automation_katalystautomationcore_tsx_cancelanimationframe"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 1
+    }
+  },
+  {
+    "name": "KatalystCore",
+    "filePath": "src/components/KatalystGrowthPage.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 109,
+    "endByte": 167,
+    "startLine": 3,
+    "endLine": 5,
+    "startColumn": 27,
+    "endColumn": 33,
+    "signature": "() => <KatalystCore />;",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "frame",
+    "filePath": "src/components/home-hero.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 342,
+    "endByte": 466,
+    "startLine": 9,
+    "endLine": 12,
+    "startColumn": 12,
+    "endColumn": 3,
+    "signature": "() => {",
+    "calls": [
+      "src_components_socialproofsection_tsx_cancelanimationframe",
+      "src_components_home_hero_tsx_cancelanimationframe",
+      "src_components_katalystcore_tsx_cancelanimationframe",
+      "src_components_automation_katalystautomationcore_tsx_cancelanimationframe",
+      "src_components_home_hero_tsx_setisvisible"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 1
+    }
+  },
+  {
+    "name": "setIsVisible",
+    "filePath": "src/components/home-hero.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 390,
+    "endByte": 414,
+    "startLine": 10,
+    "endLine": 10,
+    "startColumn": 40,
+    "endColumn": 64,
+    "signature": "() => setIsVisible(true)",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "cancelAnimationFrame",
+    "filePath": "src/components/home-hero.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 428,
+    "endByte": 461,
+    "startLine": 11,
+    "endLine": 11,
+    "startColumn": 11,
+    "endColumn": 44,
+    "signature": "() => cancelAnimationFrame(frame)",
+    "calls": [
+      "src_components_socialproofsection_tsx_cancelanimationframe",
+      "src_components_katalystcore_tsx_cancelanimationframe",
+      "src_components_automation_katalystautomationcore_tsx_cancelanimationframe"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "TestimonialsScrolling",
+    "filePath": "src/components/testimonials-scrolling.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 2620,
+    "endByte": 5902,
+    "startLine": 67,
+    "endLine": 139,
+    "startColumn": 7,
+    "endColumn": 1,
+    "signature": "function TestimonialsScrolling() {",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 1
+    }
+  },
+  {
+    "name": "KatalystAutomationCore",
+    "filePath": "src/components/KatalystAutomationPage.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 144,
+    "endByte": 216,
+    "startLine": 3,
+    "endLine": 5,
+    "startColumn": 31,
+    "endColumn": 37,
+    "signature": "() => <KatalystAutomationCore />;",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "frame",
+    "filePath": "src/components/KatalystCore.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 889,
+    "endByte": 1015,
+    "startLine": 19,
+    "endLine": 22,
+    "startColumn": 12,
+    "endColumn": 3,
+    "signature": "() => {",
+    "calls": [
+      "src_components_socialproofsection_tsx_cancelanimationframe",
+      "src_components_home_hero_tsx_cancelanimationframe",
+      "src_components_katalystcore_tsx_cancelanimationframe",
+      "src_components_automation_katalystautomationcore_tsx_cancelanimationframe",
+      "src_components_katalystcore_tsx_setherovisible",
+      "src_components_automation_katalystautomationcore_tsx_setherovisible"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 1
+    }
+  },
+  {
+    "name": "setHeroVisible",
+    "filePath": "src/components/KatalystCore.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 937,
+    "endByte": 963,
+    "startLine": 20,
+    "endLine": 20,
+    "startColumn": 40,
+    "endColumn": 66,
+    "signature": "() => setHeroVisible(true)",
+    "calls": [
+      "src_components_automation_katalystautomationcore_tsx_setherovisible"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "cancelAnimationFrame",
+    "filePath": "src/components/KatalystCore.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 977,
+    "endByte": 1010,
+    "startLine": 21,
+    "endLine": 21,
+    "startColumn": 11,
+    "endColumn": 44,
+    "signature": "() => cancelAnimationFrame(frame)",
+    "calls": [
+      "src_components_socialproofsection_tsx_cancelanimationframe",
+      "src_components_home_hero_tsx_cancelanimationframe",
+      "src_components_automation_katalystautomationcore_tsx_cancelanimationframe"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "e",
+    "filePath": "src/components/KatalystCore.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 1049,
+    "endByte": 1286,
+    "startLine": 24,
+    "endLine": 34,
+    "startColumn": 26,
+    "endColumn": 3,
+    "signature": "(",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 3,
+      "maxNestingDepth": 3
+    }
+  },
+  {
+    "name": "i",
+    "filePath": "src/components/KatalystCore.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 5760,
+    "endByte": 6028,
+    "startLine": 121,
+    "endLine": 128,
+    "startColumn": 41,
+    "endColumn": 19,
+    "signature": "(i) => (",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "svg",
+    "filePath": "src/components/HeroSection.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 266,
+    "endByte": 527,
+    "startLine": 10,
+    "endLine": 20,
+    "startColumn": 20,
+    "endColumn": 1,
+    "signature": "() => (",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "header",
+    "filePath": "src/components/HeroSection.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 545,
+    "endByte": 1509,
+    "startLine": 22,
+    "endLine": 43,
+    "startColumn": 15,
+    "endColumn": 1,
+    "signature": "() => (",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "button",
+    "filePath": "src/components/HeroSection.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 1006,
+    "endByte": 1241,
+    "startLine": 30,
+    "endLine": 35,
+    "startColumn": 22,
+    "endColumn": 9,
+    "signature": "({ label, hasChevron }) => (",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "section",
+    "filePath": "src/components/HeroSection.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 1532,
+    "endByte": 2461,
+    "startLine": 45,
+    "endLine": 71,
+    "startColumn": 20,
+    "endColumn": 1,
+    "signature": "() => (",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "word",
+    "filePath": "src/components/world-map-demo.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 1600,
+    "endByte": 1996,
+    "startLine": 37,
+    "endLine": 47,
+    "startColumn": 41,
+    "endColumn": 13,
+    "signature": "(word, idx) => (",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "KatalystLogo",
+    "filePath": "src/components/ui/katalyst-logo.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 21,
+    "endByte": 540,
+    "startLine": 2,
+    "endLine": 19,
+    "startColumn": 7,
+    "endColumn": 1,
+    "signature": "function KatalystLogo({ width = 220, height = 56 }: { width?: number; height?: number }) {",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 1
+    }
+  },
+  {
+    "name": "props",
+    "filePath": "src/components/ui/testimonials-columns-1.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 116,
+    "endByte": 382,
+    "startLine": 4,
+    "endLine": 14,
+    "startColumn": 34,
+    "endColumn": 10,
+    "signature": "(props: {",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 1
+    }
+  },
+  {
+    "name": "i",
+    "filePath": "src/components/ui/testimonials-columns-1.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 754,
+    "endByte": 1798,
+    "startLine": 26,
+    "endLine": 48,
+    "startColumn": 38,
+    "endColumn": 11,
+    "signature": "({ text, image, name, role }, i) => (",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "props",
+    "filePath": "src/components/ui/button.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 1079,
+    "endByte": 1226,
+    "startLine": 28,
+    "endLine": 29,
+    "startColumn": 15,
+    "endColumn": 88,
+    "signature": "({ className, variant, size, ...props }: ButtonProps) => {",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "lat",
+    "filePath": "src/components/ui/world-map.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 758,
+    "endByte": 895,
+    "startLine": 30,
+    "endLine": 34,
+    "startColumn": 23,
+    "endColumn": 3,
+    "signature": "(lat: number, lng: number) => {",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 1
+    }
+  },
+  {
+    "name": "start",
+    "filePath": "src/components/ui/world-map.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 925,
+    "endByte": 1172,
+    "startLine": 36,
+    "endLine": 43,
+    "startColumn": 27,
+    "endColumn": 3,
+    "signature": "(",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 1
+    }
+  },
+  {
+    "name": "dot",
+    "filePath": "src/components/ui/world-map.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 1692,
+    "endByte": 1903,
+    "startLine": 60,
+    "endLine": 64,
+    "startColumn": 18,
+    "endColumn": 38,
+    "signature": "(dot, i) => {",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 1
+    }
+  },
+  {
+    "name": "service",
+    "filePath": "src/components/ui/about-us-section.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 6677,
+    "endByte": 6717,
+    "startLine": 189,
+    "endLine": 189,
+    "startColumn": 22,
+    "endColumn": 62,
+    "signature": "(service) => service.position === \"left\"",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "step",
+    "filePath": "src/components/ui/about-us-section.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 14067,
+    "endByte": 14385,
+    "startLine": 360,
+    "endLine": 373,
+    "startColumn": 12,
+    "endColumn": 3,
+    "signature": "() => {",
+    "calls": [
+      "src_components_ui_about_us_section_tsx_clearinterval",
+      "src_components_automation_about_us_section_tsx_clearinterval"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 5,
+      "maxNestingDepth": 4
+    }
+  },
+  {
+    "name": "current",
+    "filePath": "src/components/ui/about-us-section.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 14155,
+    "endByte": 14341,
+    "startLine": 363,
+    "endLine": 371,
+    "startColumn": 27,
+    "endColumn": 5,
+    "signature": "() => {",
+    "calls": [
+      "src_components_ui_about_us_section_tsx_clearinterval",
+      "src_components_automation_about_us_section_tsx_clearinterval"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 5,
+      "maxNestingDepth": 3
+    }
+  },
+  {
+    "name": "clearInterval",
+    "filePath": "src/components/ui/about-us-section.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 14358,
+    "endByte": 14381,
+    "startLine": 372,
+    "endLine": 372,
+    "startColumn": 11,
+    "endColumn": 34,
+    "signature": "() => clearInterval(id)",
+    "calls": [
+      "src_components_automation_about_us_section_tsx_clearinterval"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "WebGLShader",
+    "filePath": "src/components/ui/web-gl-shader.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 95,
+    "endByte": 4017,
+    "startLine": 5,
+    "endLine": 147,
+    "startColumn": 7,
+    "endColumn": 1,
+    "signature": "function WebGLShader() {",
+    "calls": [
+      "src_components_socialproofsection_tsx_cancelanimationframe",
+      "src_components_home_hero_tsx_cancelanimationframe",
+      "src_components_katalystcore_tsx_cancelanimationframe",
+      "src_components_automation_katalystautomationcore_tsx_cancelanimationframe",
+      "src_components_ui_web_gl_shader_tsx_handleresize"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 17,
+      "maxNestingDepth": 7
+    }
+  },
+  {
+    "name": "canvas",
+    "filePath": "src/components/ui/web-gl-shader.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 565,
+    "endByte": 3898,
+    "startLine": 23,
+    "endLine": 139,
+    "startColumn": 12,
+    "endColumn": 3,
+    "signature": "() => {",
+    "calls": [
+      "src_components_socialproofsection_tsx_cancelanimationframe",
+      "src_components_home_hero_tsx_cancelanimationframe",
+      "src_components_katalystcore_tsx_cancelanimationframe",
+      "src_components_automation_katalystautomationcore_tsx_cancelanimationframe",
+      "src_components_ui_web_gl_shader_tsx_handleresize"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 17,
+      "maxNestingDepth": 6
+    }
+  },
+  {
+    "name": "refs",
+    "filePath": "src/components/ui/web-gl-shader.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 2638,
+    "endByte": 2960,
+    "startLine": 95,
+    "endLine": 102,
+    "startColumn": 25,
+    "endColumn": 5,
+    "signature": "() => {",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 3,
+      "maxNestingDepth": 2
+    }
+  },
+  {
+    "name": "handleResize",
+    "filePath": "src/components/ui/web-gl-shader.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 3377,
+    "endByte": 3411,
+    "startLine": 117,
+    "endLine": 119,
+    "startColumn": 46,
+    "endColumn": 5,
+    "signature": "() => {",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 1
+    }
+  },
+  {
+    "name": "setIsMobileMenuOpen",
+    "filePath": "src/components/ui/navbar.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 636,
+    "endByte": 680,
+    "startLine": 16,
+    "endLine": 16,
+    "startColumn": 27,
+    "endColumn": 71,
+    "signature": "() => setIsMobileMenuOpen(!isMobileMenuOpen)",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "e",
+    "filePath": "src/components/ui/navbar.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 775,
+    "endByte": 1421,
+    "startLine": 19,
+    "endLine": 38,
+    "startColumn": 32,
+    "endColumn": 3,
+    "signature": "(",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 11,
+      "maxNestingDepth": 6
+    }
+  },
+  {
+    "name": "isHomePage",
+    "filePath": "src/components/ui/navbar.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 1450,
+    "endByte": 1702,
+    "startLine": 40,
+    "endLine": 51,
+    "startColumn": 26,
+    "endColumn": 3,
+    "signature": "() => {",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 9,
+      "maxNestingDepth": 5
+    }
+  },
+  {
+    "name": "phoneNumber",
+    "filePath": "src/components/ui/floating-whatsapp.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 60,
+    "endByte": 1802,
+    "startLine": 2,
+    "endLine": 28,
+    "startColumn": 32,
+    "endColumn": 1,
+    "signature": "() => {",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 1
+    }
+  },
+  {
+    "name": "frame",
+    "filePath": "src/components/automation/KatalystAutomationCore.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 977,
+    "endByte": 1103,
+    "startLine": 18,
+    "endLine": 21,
+    "startColumn": 12,
+    "endColumn": 3,
+    "signature": "() => {",
+    "calls": [
+      "src_components_socialproofsection_tsx_cancelanimationframe",
+      "src_components_home_hero_tsx_cancelanimationframe",
+      "src_components_katalystcore_tsx_cancelanimationframe",
+      "src_components_automation_katalystautomationcore_tsx_cancelanimationframe",
+      "src_components_katalystcore_tsx_setherovisible",
+      "src_components_automation_katalystautomationcore_tsx_setherovisible"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 1
+    }
+  },
+  {
+    "name": "setHeroVisible",
+    "filePath": "src/components/automation/KatalystAutomationCore.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 1025,
+    "endByte": 1051,
+    "startLine": 19,
+    "endLine": 19,
+    "startColumn": 40,
+    "endColumn": 66,
+    "signature": "() => setHeroVisible(true)",
+    "calls": [
+      "src_components_katalystcore_tsx_setherovisible"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "cancelAnimationFrame",
+    "filePath": "src/components/automation/KatalystAutomationCore.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 1065,
+    "endByte": 1098,
+    "startLine": 20,
+    "endLine": 20,
+    "startColumn": 11,
+    "endColumn": 44,
+    "signature": "() => cancelAnimationFrame(frame)",
+    "calls": [
+      "src_components_socialproofsection_tsx_cancelanimationframe",
+      "src_components_home_hero_tsx_cancelanimationframe",
+      "src_components_katalystcore_tsx_cancelanimationframe"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "e",
+    "filePath": "src/components/automation/KatalystAutomationCore.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 1137,
+    "endByte": 1374,
+    "startLine": 23,
+    "endLine": 33,
+    "startColumn": 26,
+    "endColumn": 3,
+    "signature": "(",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 3,
+      "maxNestingDepth": 3
+    }
+  },
+  {
+    "name": "i",
+    "filePath": "src/components/automation/KatalystAutomationCore.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 5746,
+    "endByte": 5999,
+    "startLine": 118,
+    "endLine": 125,
+    "startColumn": 37,
+    "endColumn": 19,
+    "signature": "(i) => (",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "TestimonialsScrolling",
+    "filePath": "src/components/automation/testimonials-scrolling.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 2500,
+    "endByte": 5810,
+    "startLine": 67,
+    "endLine": 139,
+    "startColumn": 7,
+    "endColumn": 1,
+    "signature": "function TestimonialsScrolling() {",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 2,
+      "maxNestingDepth": 1
+    }
+  },
+  {
+    "name": "service",
+    "filePath": "src/components/automation/about-us-section.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 6782,
+    "endByte": 6822,
+    "startLine": 189,
+    "endLine": 189,
+    "startColumn": 22,
+    "endColumn": 62,
+    "signature": "(service) => service.position === \"left\"",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "step",
+    "filePath": "src/components/automation/about-us-section.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 14172,
+    "endByte": 14490,
+    "startLine": 360,
+    "endLine": 373,
+    "startColumn": 12,
+    "endColumn": 3,
+    "signature": "() => {",
+    "calls": [
+      "src_components_ui_about_us_section_tsx_clearinterval",
+      "src_components_automation_about_us_section_tsx_clearinterval"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 5,
+      "maxNestingDepth": 4
+    }
+  },
+  {
+    "name": "current",
+    "filePath": "src/components/automation/about-us-section.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 14260,
+    "endByte": 14446,
+    "startLine": 363,
+    "endLine": 371,
+    "startColumn": 27,
+    "endColumn": 5,
+    "signature": "() => {",
+    "calls": [
+      "src_components_ui_about_us_section_tsx_clearinterval",
+      "src_components_automation_about_us_section_tsx_clearinterval"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 5,
+      "maxNestingDepth": 3
+    }
+  },
+  {
+    "name": "clearInterval",
+    "filePath": "src/components/automation/about-us-section.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 14463,
+    "endByte": 14486,
+    "startLine": 372,
+    "endLine": 372,
+    "startColumn": 11,
+    "endColumn": 34,
+    "signature": "() => clearInterval(id)",
+    "calls": [
+      "src_components_ui_about_us_section_tsx_clearinterval"
+    ],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  },
+  {
+    "name": "word",
+    "filePath": "src/components/automation/world-map-demo.tsx",
+    "type": "function",
+    "language": "typescript",
+    "startByte": 1603,
+    "endByte": 1999,
+    "startLine": 37,
+    "endLine": 47,
+    "startColumn": 40,
+    "endColumn": 13,
+    "signature": "(word, idx) => (",
+    "calls": [],
+    "metrics": {
+      "cyclomaticComplexity": 1,
+      "maxNestingDepth": 0
+    }
+  }
+]
