@@ -7,6 +7,7 @@
       "dependencies": {
         "@fontsource/geist-sans": "^5.1.0",
         "@paper-design/shaders-react": "^0.0.72",
+        "@radix-ui/react-slot": "^1.1.2",
         "@radix-ui/react-tooltip": "^1.2.8",
         "aceternity-ui": "^0.2.2",
         "class-variance-authority": "^0.7.1",
@@ -21,7 +22,7 @@
         "react": "19.2.4",
         "react-dom": "19.2.4",
         "react-router-dom": "^7.14.0",
-        "tailwind-merge": "^2.5.2",
+        "tailwind-merge": "^2.6.0",
         "tailwindcss-animate": "^1.0.7",
         "three": "^0.158.0",
       },

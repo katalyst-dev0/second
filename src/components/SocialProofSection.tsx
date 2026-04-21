@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
-
-const brands = ["Vortex", "Nimbus", "Prysma", "Cirrus", "Kynder", "Halcyn"];
+import { BRANDS, SOCIAL_PROOF_VIDEO_URL } from "@/data/social-proof";
 
 const SocialProofSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -54,7 +53,7 @@ const SocialProofSection = () => {
         autoPlay
         muted
         playsInline
-        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260308_114720_3dabeb9e-2c39-4907-b747-bc3544e2d5b7.mp4"
+        src={SOCIAL_PROOF_VIDEO_URL}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
       <div className="relative z-10 flex flex-col items-center gap-20 pt-16 pb-24 px-4">
@@ -68,7 +67,7 @@ const SocialProofSection = () => {
           <div className="flex items-center gap-10">
             <div className="overflow-hidden">
               <div className="flex animate-marquee gap-16">
-                {[...brands, ...brands].map((brand, index) => (
+                {[...BRANDS, ...BRANDS].map((brand, index) => (
                   <div key={`${brand}-${index}`} className="flex items-center gap-3">
                     <div className="liquid-glass h-12 w-12 rounded-lg flex items-center justify-center text-base font-semibold text-foreground">
                       {brand.charAt(0)}

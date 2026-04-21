@@ -11,6 +11,9 @@ interface NavbarProps {
   locoScroll?: any;
 }
 
+import { NAV_ITEMS } from "@/data/navigation";
+import { EXTERNAL_LINKS } from "@/data/contact";
+
 export const Navbar = ({ scrollToSection, locoScroll }: NavbarProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -97,14 +100,14 @@ export const Navbar = ({ scrollToSection, locoScroll }: NavbarProps) => {
                   Home
                 </Link>
               )}
-              {["reach", "community", "feedback"].map((item) => (
+              {NAV_ITEMS.map((item) => (
                 <a
-                  key={item}
-                  href={`#${item}`}
-                  onClick={(e) => handleScrollToSection(e, `#${item}`)}
+                  key={item.label}
+                  href={item.href}
+                  onClick={(e) => handleScrollToSection(e, item.href)}
                   className="text-4xl font-light tracking-tighter text-white/60 hover:text-white capitalize transition-colors"
                 >
-                  {item.replace("-", " ")}
+                  {item.label.replace("-", " ")}
                 </a>
               ))}
 
@@ -117,7 +120,7 @@ export const Navbar = ({ scrollToSection, locoScroll }: NavbarProps) => {
                 className="rounded-full px-10 py-6 text-lg font-bold w-full max-w-[280px]"
               >
                 <a
-                  href="https://calendly.com/kompanykatalyst/discovery-call"
+                  href={EXTERNAL_LINKS.calendly}
                   target="_blank"
                   rel="noreferrer"
                   onClick={closeMobileMenu}
@@ -174,14 +177,14 @@ export const Navbar = ({ scrollToSection, locoScroll }: NavbarProps) => {
                 Home
               </Link>
             )}
-            {["reach", "community", "feedback"].map((item) => (
+            {NAV_ITEMS.map((item) => (
               <a
-                key={item}
-                href={`#${item}`}
-                onClick={(e) => handleScrollToSection(e, `#${item}`)}
+                key={item.label}
+                href={item.href}
+                onClick={(e) => handleScrollToSection(e, item.href)}
                 className="text-sm text-white/60 hover:text-white transition-colors font-medium tracking-wide whitespace-nowrap capitalize"
               >
-                {item.replace("-", " ")}
+                {item.label.replace("-", " ")}
               </a>
             ))}
           </div>
@@ -192,7 +195,7 @@ export const Navbar = ({ scrollToSection, locoScroll }: NavbarProps) => {
             className="rounded-full px-6 py-2 h-auto text-sm font-bold"
           >
             <a
-              href="https://calendly.com/kompanykatalyst/discovery-call"
+              href={EXTERNAL_LINKS.calendly}
               target="_blank"
               rel="noreferrer"
             >

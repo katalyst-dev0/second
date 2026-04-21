@@ -1,10 +1,9 @@
 import React from "react";
+import { EXTERNAL_LINKS } from "@/data/contact";
 
 export const FloatingWhatsApp: React.FC = () => {
-  // Replace this phone number with the actual desired contact number
-  const phoneNumber = "1234567890";
-  const message = "Hello! I'm interested in working with Katalyst.";
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const { phoneNumber, defaultMessage } = EXTERNAL_LINKS.whatsapp;
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
 
   return (
     <a

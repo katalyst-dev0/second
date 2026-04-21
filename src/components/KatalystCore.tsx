@@ -11,8 +11,7 @@ import { WebGLShader } from "@/components/ui/web-gl-shader";
 import { Footer } from "@/components/ui/footer-section";
 import { Navbar } from "@/components/ui/navbar";
 import { Button } from "@/components/ui/button";
-
-const SECTION_WIDTH_CLASS = "mx-auto w-[80vw] max-w-[1600px]";
+import { SECTION_WIDTH_CLASS } from "@/data";
 
 const KatalystCore = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);

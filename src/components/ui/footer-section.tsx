@@ -16,44 +16,8 @@ interface FooterSection {
 	links: FooterLink[];
 }
 
-const footerLinks: FooterSection[] = [
-	{
-		label: 'Services',
-		links: [
-			{ title: 'Our Process', href: '#process' },
-			{ title: 'Global Reach', href: '#reach' },
-			{ title: 'Community', href: '#community' },
-			{ title: 'Feedback', href: '#feedback' },
-		],
-	},
-	{
-		label: 'Company',
-		links: [
-			{ title: 'FAQs', href: '/#faq' },
-			{ title: 'About Us', href: '/#process' },
-			{ title: 'Privacy Policy', href: '/privacy' },
-			{ title: 'Terms of Services', href: '/terms' },
-		],
-	},
-	{
-		label: 'Resources',
-		links: [
-			{ title: 'Blog', href: '/blog' },
-			{ title: 'Changelog', href: '/changelog' },
-			{ title: 'Brand', href: '/brand' },
-			{ title: 'Help', href: '/help' },
-		],
-	},
-	{
-		label: 'Social Links',
-		links: [
-			{ title: 'Facebook', href: '#', icon: Facebook },
-			{ title: 'Instagram', href: '#', icon: Instagram },
-			{ title: 'Youtube', href: '#', icon: Youtube },
-			{ title: 'LinkedIn', href: '#', icon: Linkedin },
-		],
-	},
-];
+import { FOOTER_SECTIONS } from '@/data/navigation';
+import { SOCIAL_LINKS } from '@/data/social';
 
 export function Footer() {
 	return (
@@ -74,7 +38,7 @@ export function Footer() {
 				</AnimatedContainer>
 
 				<div className="grid grid-cols-2 gap-8 md:grid-cols-4 xl:col-span-2">
-					{footerLinks.map((section, index) => (
+					{FOOTER_SECTIONS.map((section, index) => (
 						<AnimatedContainer key={section.label} delay={0.1 + index * 0.1}>
 							<div className="mb-8 md:mb-0 flex flex-col items-center md:items-start text-center md:text-left">
 								<h3 className="text-xs font-bold uppercase tracking-widest text-white mb-6">{section.label}</h3>
@@ -85,7 +49,6 @@ export function Footer() {
 												href={link.href}
 												className="hover:text-white inline-flex items-center transition-all duration-300"
 											>
-												{link.icon && <link.icon className="me-2 size-4" />}
 												{link.title}
 											</a>
 										</li>
@@ -94,6 +57,24 @@ export function Footer() {
 							</div>
 						</AnimatedContainer>
 					))}
+          <AnimatedContainer delay={0.1 + FOOTER_SECTIONS.length * 0.1}>
+            <div className="mb-8 md:mb-0 flex flex-col items-center md:items-start text-center md:text-left">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-6">Social Links</h3>
+              <ul className="text-gray-400 space-y-3 text-sm flex flex-col items-center md:items-start">
+                {SOCIAL_LINKS.map((link) => (
+                  <li key={link.title}>
+                    <a
+                      href={link.href}
+                      className="hover:text-white inline-flex items-center transition-all duration-300"
+                    >
+                      {link.icon && <link.icon className="me-2 size-4" />}
+                      {link.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </AnimatedContainer>
 				</div>
 			</div>
 

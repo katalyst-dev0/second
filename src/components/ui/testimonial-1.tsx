@@ -7,46 +7,12 @@ import {
   TooltipTrigger,
 } from "@radix-ui/react-tooltip";
 import { ArrowDown, ArrowUp, Users } from "lucide-react";
-import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { IMPACT_STATS, FEATURED_TESTIMONIALS } from "@/data/testimonials";
 
 export default function Testimonial1() {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.2 });
-
-  interface StatItem {
-    percentage: string;
-    logo: string;
-    label: string;
-    isIncrease: boolean;
-  }
-
-  const stats: StatItem[] = [
-    {
-      percentage: "4.2x",
-      label: "ROAS on Meta Ads",
-      isIncrease: true,
-      logo: "META",
-    },
-    {
-      percentage: "38%",
-      label: "CPA Reduction (Google)",
-      isIncrease: false,
-      logo: "GOOGLE",
-    },
-    {
-      percentage: "2.5x",
-      label: "Lead Volume (LinkedIn)",
-      isIncrease: true,
-      logo: "LINKEDIN",
-    },
-    {
-      percentage: "1.2M",
-      label: "YouTube Reach",
-      isIncrease: true,
-      logo: "YOUTUBE",
-    },
-  ];
 
   return (
     <div 
@@ -83,7 +49,7 @@ export default function Testimonial1() {
                   <div className="inline-block mx-2 sm:mx-3 align-middle relative group cursor-pointer">
                     <div className="relative overflow-hidden w-10 h-10 sm:w-16 md:w-20 sm:h-16 md:h-20 transition-all duration-500 rounded-full border-2 border-white/20 shadow-xl group-hover:w-32 sm:group-hover:w-48">
                       <img
-                        src={`https://pro-section.ui-layouts.com/people/aam1.png`}
+                        src={FEATURED_TESTIMONIALS[0].image}
                         alt="Brand owner"
                         className="object-cover w-full h-full"
                       />
@@ -95,9 +61,9 @@ export default function Testimonial1() {
                   className="max-w-xs bg-gray-900 text-white p-4 rounded-xl shadow-2xl border border-white/10 z-50 animate-in fade-in zoom-in duration-200"
                 >
                   <p className="mb-2 text-xs leading-relaxed opacity-90">
-                    "Katalyst transformed our ad spend into pure profit. The transparency in reporting is exactly what we needed."
+                    "{FEATURED_TESTIMONIALS[0].text}"
                   </p>
-                  <p className="font-bold text-[10px] uppercase tracking-wider text-red-400">Marcus Thorne</p>
+                  <p className="font-bold text-[10px] uppercase tracking-wider text-red-400">{FEATURED_TESTIMONIALS[0].name}</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -110,7 +76,7 @@ export default function Testimonial1() {
                   <div className="inline-block mx-2 sm:mx-3 align-middle group cursor-pointer">
                     <div className="relative overflow-hidden w-10 h-10 sm:w-16 md:w-20 sm:h-16 md:h-20 transition-all duration-500 rounded-full border-2 border-white/20 shadow-xl group-hover:w-32 sm:group-hover:w-48">
                       <img
-                        src={`https://pro-section.ui-layouts.com/people/aam3.jpg`}
+                        src={FEATURED_TESTIMONIALS[1].image}
                         alt="Marketing director"
                         className="object-cover w-full h-full"
                       />
@@ -122,9 +88,9 @@ export default function Testimonial1() {
                   className="max-w-xs bg-gray-900 text-white p-4 rounded-xl shadow-2xl border border-white/10 z-50 animate-in fade-in zoom-in duration-200"
                 >
                   <p className="mb-2 text-xs leading-relaxed opacity-90">
-                    "Scaling globally became a data-driven process rather than a guessing game. Our ROI has never been higher."
+                    "{FEATURED_TESTIMONIALS[1].text}"
                   </p>
-                  <p className="font-bold text-[10px] uppercase tracking-wider text-red-400">Elena Rodriguez</p>
+                  <p className="font-bold text-[10px] uppercase tracking-wider text-red-400">{FEATURED_TESTIMONIALS[1].name}</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -148,7 +114,7 @@ export default function Testimonial1() {
           animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          {stats.map((stat, index) => (
+          {IMPACT_STATS.map((stat, index) => (
             <StatCard key={stat.label} stat={stat} />
           ))}
         </motion.div>

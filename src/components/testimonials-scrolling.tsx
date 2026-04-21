@@ -3,67 +3,11 @@ import { TestimonialsColumn } from "@/components/ui/testimonials-columns-1";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MessageSquareQuote } from "lucide-react";
+import { TESTIMONIALS } from "@/data/testimonials";
 
-const testimonials = [
-  {
-    text: "Katalyst has completely transformed how our brand scales. The performance insights are a total game-changer.",
-    image: "https://randomuser.me/api/portraits/women/1.jpg",
-    name: "Briana Patton",
-    role: "Operations Manager",
-  },
-  {
-    text: "Implementation of our ad strategy was seamless. We saw positive ROI in days, not weeks. Highly recommended.",
-    image: "https://randomuser.me/api/portraits/men/2.jpg",
-    name: "Bilal Ahmed",
-    role: "IT Director",
-  },
-  {
-    text: "The marketing team at Katalyst is unparalleled. They actually understand technical hurdles and guide you to growth.",
-    image: "https://randomuser.me/api/portraits/women/3.jpg",
-    name: "Saman Malik",
-    role: "Support Lead",
-  },
-  {
-    text: "A truly scalable solution that keeps pace with our rapid growth. It's the marketing infrastructure every startup needs.",
-    image: "https://randomuser.me/api/portraits/men/4.jpg",
-    name: "Omar Raza",
-    role: "CEO",
-  },
-  {
-    text: "Robust, reliable, and incredibly fast campaign execution. It's rare to find a partner that delivers like this.",
-    image: "https://randomuser.me/api/portraits/women/5.jpg",
-    name: "Zainab Hussain",
-    role: "Project Lead",
-  },
-  {
-    text: "The level of creative customization available is incredible. It finally feels like we have a strategy built just for us.",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-    name: "Aliza Khan",
-    role: "Analyst",
-  },
-  {
-    text: "Our conversion efficiency has jumped 40% since migrating our ads. The ROI was evident within the first month.",
-    image: "https://randomuser.me/api/portraits/men/7.jpg",
-    name: "Farhan Siddiqui",
-    role: "Marketing Head",
-  },
-  {
-    text: "Katalyst is the secret weapon for our global reach. Distance no longer matters for high-fidelity performance.",
-    image: "https://randomuser.me/api/portraits/women/8.jpg",
-    name: "Sana Sheikh",
-    role: "Sales Lead",
-  },
-  {
-    text: "Beautifully designed campaigns and technically sound attribution. It's the standard for modern marketing.",
-    image: "https://randomuser.me/api/portraits/men/9.jpg",
-    name: "Hassan Ali",
-    role: "E-commerce Manager",
-  },
-];
-
-const firstColumn = testimonials.slice(0, 3);
-const secondColumn = testimonials.slice(3, 6);
-const thirdColumn = testimonials.slice(6, 9);
+const firstColumn = TESTIMONIALS.slice(0, 3);
+const secondColumn = TESTIMONIALS.slice(3, 6);
+const thirdColumn = TESTIMONIALS.slice(6, 9);
 
 export function TestimonialsScrolling() {
   const containerRef = useRef<HTMLDivElement>(null);

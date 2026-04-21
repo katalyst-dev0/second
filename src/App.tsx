@@ -31,10 +31,7 @@ const LandingPage = () => {
 
       <main className="flex-1 w-full overflow-x-hidden">
         <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+          <div 
             className="flex flex-col gap-20 lg:gap-24 py-16 lg:py-20"
           >
             {/* 2. Hero Section */}
@@ -56,7 +53,7 @@ const LandingPage = () => {
             <section className="pt-16">
               <Footer />
             </section>
-          </motion.div>
+          </div>
         </div>
       </main>
     </div>

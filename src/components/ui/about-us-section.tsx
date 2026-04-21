@@ -16,84 +16,25 @@ import {
   ArrowRight,
 } from "lucide-react"
 import { motion, useScroll, useTransform, useInView, type Variants } from "framer-motion"
+import { METHODOLOGY_SERVICES, METHODOLOGY_STATS, METHODOLOGY_DESCRIPTION } from "@/data/process"
 
-const services = [
-  {
-    icon: <Search className="w-6 h-6" />,
-    secondaryIcon: <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-red-400" />,
-    title: "Market Audit",
-    description:
-      "Analyze trends, competitor strategies, and current campaign performance to identify growth opportunities.",
-    position: "left",
-  },
-  {
-    icon: <FileText className="w-6 h-6" />,
-    secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-red-400" />,
-    title: "Strategy",
-    description:
-      "Craft bold marketing plans that balance creative storytelling with technical precision and target accuracy.",
-    position: "left",
-  },
-  {
-    icon: <Sparkles className="w-6 h-6" />,
-    secondaryIcon: <Star className="w-4 h-4 absolute -top-1 -right-1 text-red-400" />,
-    title: "Creative",
-    description:
-      "High-performance ad creatives and copy designed to stop the scroll and drive immediate action.",
-    position: "left",
-  },
-  {
-    icon: <Zap className="w-6 h-6" />,
-    secondaryIcon: <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-red-400" />,
-    title: "Execution",
-    description:
-      "Launching and managing multi-channel campaigns with absolute focus on efficiency and budget control.",
-    position: "right",
-  },
-  {
-    icon: <BarChart3 className="w-6 h-6" />,
-    secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-red-400" />,
-    title: "Performance",
-    description:
-      "Real-time analytics and attribution to ensure every dollar of ad spend is accounted for and working.",
-    position: "right",
-  },
-  {
-    icon: <TrendingUp className="w-6 h-6" />,
-    secondaryIcon: <Star className="w-4 h-4 absolute -top-1 -right-1 text-red-400" />,
-    title: "Scaling",
-    description:
-      "Continuously refining targets and creative to scale performance without diminishing returns on investment.",
-    position: "right",
-  },
-]
+const iconMap: Record<string, React.ReactNode> = {
+  Search: <Search className="w-6 h-6" />,
+  FileText: <FileText className="w-6 h-6" />,
+  Sparkles: <Sparkles className="w-6 h-6" />,
+  Zap: <Zap className="w-6 h-6" />,
+  BarChart3: <BarChart3 className="w-6 h-6" />,
+  TrendingUp: <TrendingUp className="w-6 h-6" />,
+  Award: <Award className="w-6 h-6" />,
+  Users: <Users className="w-6 h-6" />,
+  Target: <Target className="w-6 h-6" />,
+};
 
-const stats = [
-  { icon: <Award className="w-6 h-6" />, value: 100, label: "Campaigns Launched", suffix: "+" },
-  { icon: <Users className="w-6 h-6" />, value: 1500, label: "Growth Goals Met", suffix: "+" },
-  { icon: <Target className="w-6 h-6" />, value: 10, label: "Views Generated", suffix: "M+" },
-  { icon: <TrendingUp className="w-6 h-6" />, value: 98, label: "ROI Target Success", suffix: "%" },
-]
-
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
-    },
-  },
-}
-
-const itemVariants: Variants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-  },
-}
+const secondaryIconMap: Record<string, (color: string) => React.ReactNode> = {
+  Sparkles: (color) => <Sparkles className={`w-4 h-4 absolute -top-1 -right-1 ${color}`} />,
+  CheckCircle: (color) => <CheckCircle className={`w-4 h-4 absolute -top-1 -right-1 ${color}`} />,
+  Star: (color) => <Star className={`w-4 h-4 absolute -top-1 -right-1 ${color}`} />,
+};
 
 export default function AboutUsSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -181,12 +122,12 @@ export default function AboutUsSection() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          We are a team of performance marketers and creative strategists dedicated to scaling brands through data-driven campaigns and absolute transparency.
+          {METHODOLOGY_DESCRIPTION}
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 relative">
           <div className="space-y-12 md:space-y-16 order-2 md:order-1">
-            {services
+            {METHODOLOGY_SERVICES
               .filter((service) => service.position === "left")
               .map((service, idx) => (
                 <ServiceItem key={`left-${idx}`} service={service} delay={idx * 0.2} direction="left" />
@@ -259,7 +200,7 @@ export default function AboutUsSection() {
           </div>
 
           <div className="space-y-12 md:space-y-16 order-3 md:order-3">
-            {services
+            {METHODOLOGY_SERVICES
               .filter((service) => service.position === "right")
               .map((service, idx) => (
                 <ServiceItem key={`right-${idx}`} service={service} delay={idx * 0.2} direction="right" />
@@ -274,7 +215,7 @@ export default function AboutUsSection() {
           animate={isStatsInView ? "visible" : "hidden"}
           variants={containerVariants}
         >
-          {stats.map((stat, index) => (
+          {METHODOLOGY_STATS.map((stat, index) => (
             <StatCounter key={stat.label} stat={stat} delay={index * 0.1} />
           ))}
         </motion.div>
@@ -303,7 +244,7 @@ export default function AboutUsSection() {
 }
 
 interface ServiceItemProps {
-  service: (typeof services)[0]
+  service: (typeof METHODOLOGY_SERVICES)[0]
   delay: number
   direction: "left" | "right"
 }
@@ -325,8 +266,8 @@ function ServiceItem({ service, delay, direction }: ServiceItemProps) {
         transition={{ duration: 0.6, delay: delay + 0.2 }}
       >
         <motion.div className="glass-card p-4 rounded-2xl transition-all duration-300 group-hover:bg-white group-hover:text-black shadow-sm" whileHover={{ rotate: [0, -10, 10, -5, 0], transition: { duration: 0.5 } }}>
-          {service.icon}
-          {service.secondaryIcon}
+          {iconMap[service.iconName]}
+          {secondaryIconMap[service.secondaryIconName](service.secondaryIconColor)}
         </motion.div>
         <h3 className="text-xl font-semibold text-white group-hover:text-red-400 transition-colors duration-300 tracking-tight">{service.title}</h3>
       </motion.div>
@@ -352,7 +293,7 @@ function ServiceItem({ service, delay, direction }: ServiceItemProps) {
 }
 
 interface StatCounterProps {
-  stat: (typeof stats)[0]
+  stat: (typeof METHODOLOGY_STATS)[0]
   delay: number
 }
 
@@ -380,7 +321,7 @@ function StatCounter({ stat, delay }: StatCounterProps) {
       animate={{ opacity: 1 }}
       transition={{ delay }}
     >
-      <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-white/10 text-white">{stat.icon}</div>
+      <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-white/10 text-white">{iconMap[stat.iconName]}</div>
       <p className="text-2xl sm:text-3xl font-semibold">
         {value}
         {stat.suffix}
