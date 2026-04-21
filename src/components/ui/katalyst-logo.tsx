@@ -1,8 +1,21 @@
 "use client"
 
-export function KatalystLogo({ width = 220, height = 56 }: { width?: number; height?: number }) {
+interface KatalystLogoProps {
+  width?: number;
+  height?: number;
+  className?: string;
+}
+
+export function KatalystLogo({ width = 220, height = 56, className }: KatalystLogoProps) {
   return (
-    <svg viewBox="0 0 260 56" width={width} height={height} role="img" aria-label="Katalyst">
+    <svg 
+      viewBox="0 0 260 56" 
+      width={width} 
+      height={height} 
+      className={className}
+      role="img" 
+      aria-label="Katalyst"
+    >
       <rect x="10" y="4" width="200" height="8" rx="4" fill="#cf2f2f" />
       <text
         x="10"

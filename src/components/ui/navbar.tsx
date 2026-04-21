@@ -69,10 +69,15 @@ export const Navbar = ({ scrollToSection, locoScroll }: NavbarProps) => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 bg-black/90 backdrop-blur-2xl z-[100] md:hidden flex flex-col p-6 h-[100dvh] w-full"
+            className="fixed inset-0 bg-black/90 backdrop-blur-2xl z-[110] md:hidden flex flex-col p-6 h-[100dvh] w-full"
           >
-            <div className="flex items-center justify-between mb-12">
-              <KatalystLogo width={140} height={30} />
+            <div className="flex items-center justify-between mb-12 w-full max-w-7xl mx-auto">
+              <button
+                onClick={handleLogoClick}
+                className="cursor-pointer transition-opacity hover:opacity-90"
+              >
+                <KatalystLogo width={140} height={30} />
+              </button>
               <button
                 onClick={closeMobileMenu}
                 className="p-2 text-white hover:bg-white/10 rounded-full transition-colors border border-white/10"
@@ -136,11 +141,11 @@ export const Navbar = ({ scrollToSection, locoScroll }: NavbarProps) => {
             onClick={handleLogoClick}
             className="cursor-pointer bg-transparent border-none p-0 transition-opacity hover:opacity-90"
           >
-            <KatalystLogo width={130} height={28} />
+            <KatalystLogo width={140} height={30} />
           </button>
           <button
             onClick={toggleMobileMenu}
-            className="p-2 text-white hover:bg-white/10 rounded-lg transition-colors border border-white/10"
+            className="p-2 text-white hover:bg-white/10 rounded-full transition-colors border border-white/10"
             aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
