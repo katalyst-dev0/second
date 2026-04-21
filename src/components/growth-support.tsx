@@ -55,7 +55,7 @@ export const GrowthSupport = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="glass-card p-8 rounded-3xl border border-white/8 relative group hover:bg-white/[0.06] transition-all duration-700 overflow-hidden"
+              className="glass-card p-8 rounded-3xl border border-white/8 relative group hover:bg-white/[0.06] hover:-translate-y-1 hover:scale-[1.01] hover:shadow-2xl hover:shadow-white/5 hover:border-white/20 transition-all duration-700 overflow-hidden"
             >
               <div className="relative z-10">
                 <div className="mb-6 icon-container w-fit group-hover:scale-105 transition-transform duration-700">
@@ -82,7 +82,7 @@ export const GrowthSupport = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="glass-card p-16 md:p-20 rounded-[3rem] border border-white/8 relative overflow-hidden text-center sm:text-left"
+          className="glass-card p-16 md:p-20 rounded-[3rem] border border-white/8 relative overflow-hidden text-center sm:text-left transition-all duration-500 hover:scale-[1.005] hover:shadow-2xl hover:shadow-black/30"
         >
           <div className="relative z-10">
             <motion.div

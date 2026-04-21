@@ -67,7 +67,7 @@ const thirdColumn = testimonials.slice(6, 9);
 
 export function TestimonialsScrolling() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: false, amount: 0.1 });
+  const isInView = useInView(containerRef, { once: true, amount: 0.1 });
 
   return (
     <section 

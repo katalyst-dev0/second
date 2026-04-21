@@ -162,7 +162,7 @@ export const CoreServices = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className={`glass-card rounded-3xl flex flex-col justify-between group hover:bg-white/[0.06] transition-all duration-700 border border-white/8 overflow-hidden relative ${gridSpan}`}
+                className={`glass-card rounded-3xl flex flex-col justify-between group hover:bg-white/[0.06] hover:-translate-y-1 hover:scale-[1.01] hover:shadow-2xl hover:shadow-white/5 transition-all duration-700 border border-white/8 overflow-hidden relative ${gridSpan}`}
                 style={{ 
                   borderTop: '1px solid rgba(255,255,255,0.15)',
                   background: isLargeCard ? 'rgba(255,255,255,0.07)' : 'rgba(255,255,255,0.03)',

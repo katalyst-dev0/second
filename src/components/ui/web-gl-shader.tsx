@@ -115,12 +115,13 @@ export function WebGLShader() {
     handleResize()
     
     // Use ResizeObserver for more reliable parent resizing
+    const parent = canvas.parentElement
     const resizeObserver = new ResizeObserver(() => {
       handleResize()
     })
     
-    if (canvas.parentElement) {
-      resizeObserver.observe(canvas.parentElement)
+    if (parent) {
+      resizeObserver.observe(parent)
     }
 
     animate()

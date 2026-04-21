@@ -8,7 +8,7 @@ export function GradientBackground() {
         src="/mesh-700.png" 
         alt="" 
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ opacity: 0.7 }}
+        style={{ opacity: 1 }}
       />
       
       {/* Very faint glows to not obscure the mesh */}

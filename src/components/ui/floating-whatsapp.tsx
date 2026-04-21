@@ -1,6 +1,6 @@
 import React from "react";
 
-export const FloatingWhatsApp = () => {
+export const FloatingWhatsApp: React.FC = () => {
   // Replace this phone number with the actual desired contact number
   const phoneNumber = "1234567890";
   const message = "Hello! I'm interested in working with Katalyst.";
